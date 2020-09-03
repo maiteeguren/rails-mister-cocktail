@@ -14,8 +14,9 @@ class CocktailsController < ApplicationController
         redirect_to cocktails_path
     end
 
-    # def show
-    # end
+    def show
+        @cocktail = Cocktail.find(params[:id])
+    end
 
     # def edit
     # end
