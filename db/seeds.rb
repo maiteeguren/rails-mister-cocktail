@@ -14,28 +14,16 @@ ingredients_serialized = open(url).read
 ingredients = JSON.parse(ingredients_serialized)
 
 puts "Cleaning database"
+Cocktail.destroy_all
+
+Dose.destroy_all
 
 Ingredient.destroy_all
 
 puts "Creating ingredients..."
 
-while (Ingredient.count < 10) do
-    randomIngredient = ingredients["drinks"][rand(100)]["strIngredient1"]
-    Ingredient.create(name: randomIngredient)
+ingredients["drinks"].each do |ingredient|
+    Ingredient.create(name: ingredient["strIngredient1"])
 end
 
 puts "Created #{Ingredient.count} ingredient(s)"
-
-puts "Cleaning database"
-
-Cocktail.destroy_all
-
-
-puts "Creating cocktails..."
-
-while (Cocktail.count < 10) do
-    randomIngredient = ingredients["drinks"][rand(100)]["strIngredient1"]
-    Cocktail.create(name: randomIngredient)
-end
-
-puts "Created #{Cocktail.count} ingredient(s)"
