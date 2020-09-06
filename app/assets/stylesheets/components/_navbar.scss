@@ -1,12 +1,29 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+nav {
+  margin: 10px;
+  padding: 30px;
+  font-weight: lighter;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+nav a {
+  color: white;
+  opacity: 0.5;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+nav a:hover {
+  opacity: 1;
+}
+//on load
+nav button {
+  background-color: Transparent;
+  color: white;
+  border-radius: white;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+  opacity: 0.5;
+}
+
+nav button:hover {
+  opacity: 1;
 }

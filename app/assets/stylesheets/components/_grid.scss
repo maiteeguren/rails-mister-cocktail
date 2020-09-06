@@ -1,0 +1,16 @@
+.grid-container {
+    width: 80vw;
+    display: flex;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.column{
+    border-color: red;
+    width: 270px;
+}
+
+.grid-container img {
+    object-fit: contain;
+    padding: 10px;
+}
