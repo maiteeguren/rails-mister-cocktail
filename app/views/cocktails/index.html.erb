@@ -4,6 +4,29 @@
   </div>
 </div>
 
-<% @cocktails.each do |cocktail| %>
-<p style="color:white"><%= cocktail.photo.key %></p>
-<% end %>
+<%  cocktails_arr =  @cocktails.shuffle.in_groups(4) %>
+
+<div class="grid-container">
+    <%  cocktails_arr =  cocktails_arr.shuffle %>
+    <div class="column">
+        <%  cocktails_arr[0].each do |cocktail|  %>
+                <%= cl_image_tag cocktail.photo.key, width: 270, crop: :fill unless cocktail.nil? %>
+        <% end %>
+    </div>
+    <div class="column">
+        <%  cocktails_arr[1].each do |cocktail|  %>
+                <%= cl_image_tag cocktail.photo.key, width: 270, crop: :fill unless cocktail.nil? %>
+        <% end %>
+    </div>
+    <div class="column">
+        <%  cocktails_arr[2].each do |cocktail|  %>
+                <%= cl_image_tag cocktail.photo.key, width: 270, crop: :fill  unless cocktail.nil? %>
+        <% end %>
+    </div>
+    <div class="column">
+        <%  cocktails_arr[3].each do |cocktail|  %>
+                <%= cl_image_tag cocktail.photo.key, width: 270, crop: :fill unless cocktail.nil? %>
+        <% end %>
+    </div>
+    
+</div>
