@@ -9,16 +9,14 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
     const banner = document.querySelector(".banner");
-    const logo = document.querySelector("#logo");
+    const logo = document.querySelector(".logo");
 
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        //banner.style.height = "50vh";
-        logo.style.height = "120px";
-        banner.style.position("sticky");
-    } else {
-        banner.style.height = "100vh";
-        logo.style.height = "248px"; 
-        banner.classList.remove("fixed");
-    }
+     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+         logo.classList.remove("small");
+    //     banner.classList.remove("fixed");
+     } else {
+         logo.classList.add("small");
+    //     banner.classList.add("fixed");
+     }
 }
 
