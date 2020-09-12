@@ -14,3 +14,18 @@
 .off {
   opacity: 0.3;
 }
+
+.plus {
+  color: white;
+  font-size: 50px;
+  display: block;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  opacity: 0.5;
+}
+.plus:hover {
+  opacity: 0.8;
+  color: white;
+  text-decoration: none;
+}
