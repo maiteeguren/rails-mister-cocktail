@@ -1,8 +1,9 @@
 .cocktail-card {
+    color: white;
     display: flex;
     margin: 30px auto;
     width: 60vw;
-    background-color: white;
+    background-color: #252526;
 }
 
 .cocktail-image {
@@ -12,4 +13,14 @@
 .cocktail-info {
     width: 50%;
     padding: 20px;
+}
+
+.cocktail-card form {
+    color: white;
+}
+
+.form-inputs .form-control {
+    background-color: #252526;
+    border-radius: 15px;
+    border-color: gray;
 }

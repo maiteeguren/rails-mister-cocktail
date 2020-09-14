@@ -20,3 +20,8 @@ function scrollFunction() {
      }
 }
 
+// setInterval(function() {
+//     const logo = document.querySelector(".logo");
+//     logo.classList.toggle('off');
+//     //logo.classList.remove('off');
+// }, 2000);
