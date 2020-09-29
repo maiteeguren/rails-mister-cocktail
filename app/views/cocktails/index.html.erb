@@ -4,7 +4,7 @@
     <h1>MR. COCKTAIL</h1>
 </div>
 
-<div class="grid-container">
+<div class="grid-container" id="cocktails">
     <div class="card-columns">
         <%  @cocktails.shuffle.each do |cocktail|  %>
             <a href="<%= cocktail_path(cocktail)%>">
