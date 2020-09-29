@@ -1,9 +1,16 @@
 .banner {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/maiteeguren/image/upload/v1601353852/cocktails-at-a-bar-DCMYLFC_kiogc5.jpg'); 
   background-size: cover;
-  background-position: center;
   width: 100vw;
   padding: 30px;
-  height: 100vh;
+  min-height: 80vh;
+  // filter: grayscale(1);
+
+  /* parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .logo {
@@ -15,42 +22,13 @@
   opacity: 0.3;
 }
 
-.add-new a {
-  width: 100%;
-  height: 100%;
-} 
-
-.add-new {
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 30px;
-  margin: 0px;
-  padding-left: 15px;
-  color: white;
-  font-size: 25px;
-  display: block;
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  opacity: 0.5;
-  width: 40px;
-  height: 40px;
-
-  transition: width 0.5s;
-  -webkit-transition: width 1s;
-  overflow: hidden;
-
-  span {
-    font-size: 15px;
-    display: none;
-  }
+h1 {
+  margin: 0 auto;
+  background-color: black;
+  height: 350px;
+  padding: 30px;
+  line-height: 290px;
+  opacity: 0.8;
+  border-radius: 50%;
 }
 
-.add-new:hover {
-  width: 200px;
-  border: 1px solid gray;
-  opacity: 0.7;
- 
-  span {
-    display: inline-block;
-  }
-}
