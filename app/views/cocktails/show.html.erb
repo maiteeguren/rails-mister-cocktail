@@ -1,27 +1,29 @@
-<div class="cocktail-card">
-    <%= cl_image_tag @cocktail.photo.key, width: 400, class: "cocktail-image" %>
-    <div class="cocktail-info">
-        <a href="<%= cocktails_path %>" class="back-button">x</a>
-        <h2 class="pb-2"><%= @cocktail.name %></h2>
+<div class="show-container d-flex align-items-center">
+    <div class="cocktail-card">
+        <%= cl_image_tag @cocktail.photo.key, width: 400, class: "cocktail-image" %>
+        <div class="cocktail-info">
+            <a href="<%= cocktails_path %>" class="back-button"><i class="fas fa-times"></i></a>
+            <h2 class="pb-2"><%= @cocktail.name %></h2>
 
-        <p class="subtitle">Ingredients</p>
-        <ul>
-        <% @cocktail.doses.each do |dose| %>
-            <li>
-                <%= dose.description %> <%= dose.ingredient.name %> 
-                <%= link_to "x", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
-            </li>
-        <% end %>
-        </ul>
+            <p class="subtitle">Ingredients</p>
+            <ul>
+            <% @cocktail.doses.each do |dose| %>
+                <li>
+                    <%= dose.description %> <%= dose.ingredient.name %>
+                    <%= link_to icon('fas', 'times'), dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
+                </li>
+            <% end %>
+            </ul>
 
-        <p class="subtitle">Add a new dose</p>
-        
-        <%= simple_form_for [@cocktail, @dose] do |f| %>
-            <div class="form-inputs">
-                <%= f.input :description %>
-                <%= f.association :ingredient %>
-                <%= f.button :submit, class: "btn" %>
-            </div>
-        <% end %>
-    <div>
+            <p class="subtitle">Add a new dose</p>
+            
+            <%= simple_form_for [@cocktail, @dose] do |f| %>
+                <div class="form-inputs">
+                    <%= f.input :description %>
+                    <%= f.association :ingredient %>
+                    <%= f.button :submit, class: "btn" %>
+                </div>
+            <% end %>
+        <div>
+    </div>
 </div>

@@ -1,3 +1,7 @@
+.show-container {
+    height: 100vh;
+}
+
 .cocktail-card {
     color: white;
     display: flex;
@@ -18,29 +22,46 @@
     flex-direction: column;
 }
 
+.cocktail-info ul {
+    padding: 0px 10px;
+}
+
+.cocktail-info li {
+    padding-left: 0px;
+    display:  flex;
+    justify-content: space-between;
+    i {
+        font-size: 12px;
+        color: $gray;
+    }
+}
+
 .cocktail-card form {
-    color: white;
+    color: $white;
 }
 
 .form-inputs .form-control {
     background-color: #252526;
     border-radius: 15px;
-    border-color: gray;
+    border-color: $gray;
+    color:$white;
+    outline: none;
+    height: 38px;
 }
 
 .btn {
     border-radius: 30px;
-    border-color: gray;
-    color: white;
+    border-color: $gray;
+    color: $white;
     padding: 5px 15px;
     display: flex;
-    margin: 50px auto;
+    margin: 20px auto;
 }
 
 .back-button {
   margin: 0px;
   padding-left: 15px;
-  color: white;
+  color: $white;
   font-size: 25px;
   display: block;
   position: absolute;
@@ -55,4 +76,13 @@
     border-bottom: 1px solid $yellow;
     letter-spacing: 1px;
     font-size: 15px;
+    padding-top: 20px;
+}
+
+a {
+    color: $white;
+}
+a:hover {
+    text-decoration: none;
+    color: $white;
 }

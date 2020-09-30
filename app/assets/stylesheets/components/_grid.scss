@@ -1,12 +1,13 @@
 .grid-container {
     width: 80vw;
     display: flex;
+    justify-content: center;
     margin: 0 auto;
     margin-top: 200px;
     padding-bottom: 40px; 
 }
 
-.column{
+.column {
     border-color: red;
     width: 270px;
 }
