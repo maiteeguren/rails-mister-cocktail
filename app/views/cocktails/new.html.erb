@@ -1,9 +1,17 @@
-<div class="new-cocktail container">
-  <h2 class="white">Add a new cocktail</h2>
+<div class="show-container d-flex align-items-center">
+  <div class="cocktail-card">
+    <div class="new-cocktail container">
+      <a href="<%= cocktails_path %>" class="back-button"><i class="fas fa-times"></i></a>
+      <div>
+      </div>
+      <h2 class="white">Add a new cocktail</h2>
 
-  <%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+      <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, class: 'btn' %>
+      <% end %>
+    </div>
+  </div>
 </div>
+

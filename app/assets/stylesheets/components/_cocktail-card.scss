@@ -5,7 +5,7 @@
 .cocktail-card {
     color: white;
     display: flex;
-    margin: 30px auto;
+    margin: 0 auto;
     width: 60vw;
     background-color: #252526;
 }
@@ -36,17 +36,21 @@
     }
 }
 
-.cocktail-card form {
+form {
     color: $white;
+    padding-top: 20px;
 }
 
-.form-inputs .form-control {
+.form-control {
     background-color: #252526;
     border-radius: 15px;
     border-color: $gray;
     color:$white;
     outline: none;
     height: 38px;
+    #dose_description {
+        height: 38px; 
+    }
 }
 
 .btn {
@@ -85,4 +89,17 @@ a {
 a:hover {
     text-decoration: none;
     color: $white;
+}
+
+.fa-plus {
+    font-size: 10px;
+    color: $yellow;
+}
+
+.cocktail-info .form-inputs {
+    display: none;
+}
+
+.show-form {
+    display: block;
 }
