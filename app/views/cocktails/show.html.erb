@@ -2,9 +2,9 @@
     <%= cl_image_tag @cocktail.photo.key, width: 400, class: "cocktail-image" %>
     <div class="cocktail-info">
         <a href="<%= cocktails_path %>" class="back-button">x</a>
-        <h2><%= @cocktail.name %></h2>
+        <h2 class="pb-2"><%= @cocktail.name %></h2>
 
-        <h3>Ingredients:</h3>
+        <p class="subtitle">Ingredients</p>
         <ul>
         <% @cocktail.doses.each do |dose| %>
             <li>
@@ -14,7 +14,7 @@
         <% end %>
         </ul>
 
-        <h3>Add a new dose:</h3>
+        <p class="subtitle">Add a new dose</p>
         
         <%= simple_form_for [@cocktail, @dose] do |f| %>
             <div class="form-inputs">
