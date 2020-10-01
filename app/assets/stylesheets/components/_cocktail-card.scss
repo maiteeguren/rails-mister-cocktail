@@ -48,7 +48,7 @@ form {
     color:$white;
     outline: none;
     height: 38px;
-    #dose_description {
+    textarea {
         height: 38px; 
     }
 }
@@ -96,10 +96,13 @@ a:hover {
     color: $yellow;
 }
 
-.cocktail-info .form-inputs {
-    display: none;
+.dose-form {
+    display: block;
+    textarea {
+        height: 38px;
+    }
 }
 
-.show-form {
-    display: block;
+.hide-form {
+    display: none;
 }

@@ -14,13 +14,15 @@
                 <% end %>
             </ul>
             <p class="subtitle d-flex justify-content-between align-items-center">Add a new dose<a href="#" id="new-dose"><i class="fas fa-plus"></i></a></p>
-            <%= simple_form_for [@cocktail, @dose] do |f| %>
-                <div class="form-inputs" id="new-dose-form">
-                    <%= f.input :description %>
-                    <%= f.association :ingredient %>
-                    <%= f.button :submit, class: "btn" %>
-                </div>
-            <% end %>
+            <div class="dose-form">
+                <%= simple_form_for [@cocktail, @dose], class:'hide-form' do |f| %>
+                    <div class="form-inputs" id="new-dose-form">
+                        <%= f.input :description %>
+                        <%= f.association :ingredient %>
+                        <%= f.button :submit, class: "btn" %>
+                    </div>
+                <% end %>
+            <div>
         </div>
     </div>
 </div>

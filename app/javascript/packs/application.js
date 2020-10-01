@@ -21,11 +21,3 @@ document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
 });
-
-const new_dose = document.getElementById('new-dose');
-const new_dose_form = document.getElementById('new-dose-form');
-
-new_dose.addEventListener('click', () => {
-  console.log("clicked");
-  // new_dose_form.classList.toggle('show-form');
-});
