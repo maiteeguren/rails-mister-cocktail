@@ -2,6 +2,15 @@
     <ul>
         <li><a href="<%= new_cocktail_path %>" class="hoverable"><i class="fas fa-cocktail"></i> <span class="nav-text hidden">Add a new cocktail</span></a></li>
         <li><a href="<%= cocktails_path %>"><h4>Mr Cocktail</h4></a></li>
-        <li><a href="#" class="hoverable"><span class="nav-text hidden">Click to search</span> <i class="fas fa-search"></i></a></li>
+        <li>
+            <form id="inline-form" novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+                <div class="search-form-control form-group  d-flex">
+                    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+                    <button name="button" type="submit" class="btn btn-flat">
+                    <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </li>
     </ul>
 </nav>
