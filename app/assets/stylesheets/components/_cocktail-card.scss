@@ -1,5 +1,6 @@
 .show-container {
     height: 100vh;
+    background: linear-gradient(45deg, black, $blue);
 }
 
 .cocktail-card {
@@ -54,13 +55,23 @@ form {
 }
 
 .btn {
-    border-radius: 30px;
-    border-color: $gray;
+    border-color: $white;
     color: $white;
     padding: 5px 15px;
     display: flex;
     margin: 20px auto;
+    text-transform: uppercase;
+    border-radius: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.5s;
 }
+    .btn:hover {
+        box-shadow: 0 0 3px 3px $blue;
+        color: $white;
+        background-color: black;
+        border-color: $blue;
+    }
 
 .back-button {
   margin: 0px;
@@ -76,8 +87,8 @@ form {
 
 .subtitle {
     text-transform: uppercase;
-    color: $yellow;
-    border-bottom: 1px solid $yellow;
+    color: $light-blue;
+    border-bottom: 1px solid $light-blue;
     letter-spacing: 1px;
     font-size: 15px;
     padding-top: 20px;
@@ -93,7 +104,7 @@ a:hover {
 
 .fa-plus {
     font-size: 10px;
-    color: $yellow;
+    color: $light-blue;
 }
 
 .dose-form {

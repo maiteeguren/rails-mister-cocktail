@@ -15,14 +15,17 @@ nav {
     align-items: center;
   }
   a {
-    opacity: 0.8;
-    color: $yellow;
+    opacity: 0.9;
+    color: $light-blue;
     text-transform: uppercase;
   }
   a:hover {
     text-decoration: none;
-    color: $yellow;
+    color: $light-blue;
     opacity: 1;
+  }
+  h4 {
+    font-weight: 300;
   }
 }
 
@@ -47,6 +50,8 @@ nav {
 #inline-form {
   padding: 0;
   margin: 0;
+  opacity: 0.9;
+
   div {
     padding: 0;
     margin: 0;    
@@ -55,7 +60,7 @@ nav {
     padding: 0 10px;
     margin: 0;
     background-color: transparent;
-    border-color: $yellow;
+    border-color: $light-blue;
     border-radius: 15px;
     color:$white;
     outline: none;
@@ -69,6 +74,14 @@ nav {
     margin: 0;
     display: block;
     border: 0px;
-    color: $yellow;
+    color: $light-blue;
+  }
+  button:hover {
+    border-color: none;
+    box-shadow: none;
   }
 }
+  #inline-form:hover {
+    opacity: 1;
+    transition: 0.5s;
+  }

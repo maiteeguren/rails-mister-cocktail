@@ -1,25 +1,47 @@
 .banner {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/maiteeguren/image/upload/v1601353852/cocktails-at-a-bar-DCMYLFC_kiogc5.jpg'); 
-  background-size: cover;
-  width: 100vw;
-  padding: 30px;
   height: 100vh;
-  // filter: grayscale(1);
-
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 0 50px;
+  
+  
   /* parallax scrolling effect */
+  background: url("https://i.pinimg.com/originals/a8/44/ec/a844ec53a8a4a1e8da2d010d400722a7.jpg");
   background-attachment: fixed;
-  background-position: center;
+  background-position: left;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
+  background-position-x: 10vw;
+
+  text-align: right;
+
+  p {
+    font-size: 20px;
+    max-width: 40%;
+    opacity: 0.8;
+  }
 }
 
 h1 {
-  margin: 0 auto;
-  background-color: black;
-  height: 350px;
-  padding: 30px;
-  line-height: 290px;
-  opacity: 0.8;
-  border-radius: 50%;
+  font-size: 100px;
+  font-weight: 200;
+  span {
+    // -webkit-text-stroke-width: 2px;
+    // -webkit-text-stroke-color: white;
+    // color: transparent;
+    font-weight: 300;
+  }
 }
 
+#solid {
+  background-color: $blue;
+  border-color: $blue;
+  margin-right: 20px;
+}
+
+  #solid:hover {
+    background-color: black;
+  }
