@@ -2,30 +2,25 @@ nav {
   opacity: 0;
   background-color: $black;
   font-size: 20px;
-  // font-family: $headers-font;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
   ul {
-    padding: 20px 40px;
     margin: 0;
     display: flex;
     list-style-type: none;
-    justify-content: space-between;
   }
   li {
     display: flex;
     align-items: center;
   }
-  a {
-    opacity: 0.9;
-    color: $light-blue;
-    text-transform: uppercase;
-  }
-  a:hover {
-    text-decoration: none;
-    color: $light-blue;
-    opacity: 1;
+  .btn {
+    margin: 0;
   }
   h4 {
     font-weight: 300;
+    margin: 0;
   }
 }
 
@@ -43,45 +38,74 @@ nav {
   transition: 0.5s ease;
 }
 
-.hoverable:hover .hidden {
+.simple_form {
+  padding: 0;
+}
+
+.search-form-control {
+  display: flex;
+  align-items: center;
+  color:$white;
+  margin: 0 20px 0 0;
+  border: 1px solid $white;
+  padding: 0 10px;
+  opacity: 0.5;
+
+  input {
+    border: 0;
+    background: transparent;
+    padding: 0;
+  }
+}
+
+.search-form-control:focus-within {
+  transition: 0.5s;
   opacity: 1;
 }
 
-#inline-form {
-  padding: 0;
-  margin: 0;
-  opacity: 0.9;
+.form-control:focus {
+  color: $white;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  box-shadow: none;    
+}
 
-  div {
-    padding: 0;
-    margin: 0;    
-  }
-  input {
-    padding: 0 10px;
-    margin: 0;
-    background-color: transparent;
-    border-color: $light-blue;
-    border-radius: 15px;
-    color:$white;
-    outline: none;
-    height: 38px;
-  }
-  input:focus {
-    outline: 0;
-  }
-  button {
-    padding: 0 10px;
-    margin: 0;
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu .hidden {
+  display: none;
+  opacity: 0;
+}
+
+@media(max-width: 768px) {
+  // .menu {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   display: block;
+  //   padding: 100px 50px;
+  //   text-align: center;
+  //   width: 100%;
+  //   height: 100vh;
+  //   background: white;
+  //   transition: 0.5s;
+  //   z-index: 999;
+  //   box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  //   box-sizing: border-box;
+  //   transition: 1s;
+  // }
+
+  .mobile-menu {
     display: block;
-    border: 0px;
-    color: $light-blue;
-  }
-  button:hover {
-    border-color: none;
-    box-shadow: none;
+    z-index: 1000;
+}
+
+  .hide-menu {
+    display: none;
+    width: 0%;
   }
 }
-  #inline-form:hover {
-    opacity: 1;
-    transition: 0.5s;
-  }

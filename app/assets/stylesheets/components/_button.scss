@@ -1,0 +1,50 @@
+.btn {
+    color: $white;
+    padding: 5px 15px;
+    margin: 20px auto;
+    text-transform: uppercase;
+    border-radius: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+    .btn:hover {
+        box-shadow: 0 0 3px 3px $blue;
+        color: $white;
+        background-color: black;
+        border-color: $blue;
+    }
+
+.transparent {
+    border-color: lightgray;
+}
+
+.purple {
+    background-color: $blue;
+    border-color: $blue;
+    margin-right: 20px;
+}
+
+.purple:hover {
+    background-color: black;
+}
+  
+.back-button {
+  margin: 0px;
+  padding-left: 15px;
+  color: $white;
+  font-size: 25px;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  opacity: 0.5;
+}
+
+.flat {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: $white;
+}

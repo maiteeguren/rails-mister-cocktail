@@ -1,6 +1,6 @@
 .show-container {
     height: 100vh;
-    background: linear-gradient(45deg, black, $blue);
+    background: black;
 }
 
 .cocktail-card {
@@ -52,37 +52,6 @@ form {
     textarea {
         height: 38px; 
     }
-}
-
-.btn {
-    border-color: $white;
-    color: $white;
-    padding: 5px 15px;
-    display: flex;
-    margin: 20px auto;
-    text-transform: uppercase;
-    border-radius: 0px;
-    font-size: 20px;
-    font-weight: bold;
-    transition: 0.5s;
-}
-    .btn:hover {
-        box-shadow: 0 0 3px 3px $blue;
-        color: $white;
-        background-color: black;
-        border-color: $blue;
-    }
-
-.back-button {
-  margin: 0px;
-  padding-left: 15px;
-  color: $white;
-  font-size: 25px;
-  display: block;
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  opacity: 0.5;
 }
 
 .subtitle {

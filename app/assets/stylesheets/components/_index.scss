@@ -1,6 +1,7 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
+@import "button";
 @import "navbar";
 @import "banner";
 @import "grid";
@@ -9,4 +10,12 @@
 
 .fixed {
     position: fixed;
+}
+
+@media(max-width: 992px) {
+
+}
+
+@media(max-width: 768px) {
+
 }
