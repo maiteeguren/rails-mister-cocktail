@@ -25,6 +25,37 @@
                     <div>
                 </li>
             </ul>
+            <p class="subtitle">Reviews (<%= @cocktail.reviews.count %>)</p>
+            <ul>
+                <% @cocktail.reviews.each do |review| %>
+                    <li class="d-block">
+                        <% review.rating.times do %> 
+                            <i class="fas fa-star"></i>
+                        <% end %>
+                        <% if review.rating < 5 %>
+                            <% ( 5 - review.rating).times do %> 
+                                <i class="far fa-star"></i>
+                            <% end %>
+                        <% end %>
+
+                        <p class="m-0"><%= review.description %></p>
+                        <p>- <%= review.user %></p>
+                    </li>
+                <% end %>
+                <li class="d-block add-new-dose">
+                    <div class="d-flex justify-content-between add-new-review">Add a review<i class="fas fa-pen"></i><i class="fas fa-times hidden"></i></div>
+                    <div class="dose-form">
+                        <%= simple_form_for [@cocktail, @review] do |f| %>
+                            <div class="form-inputs hidden" id="new-review-form">
+                                <%= f.input :user %>
+                                <%= f.input :description %>
+                                <%= f.input :rating, collection: 1..5  %>
+                                <%= f.button :submit, class: "btn purple" %>
+                            </div>
+                        <% end %>
+                    <div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
