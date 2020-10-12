@@ -1,5 +1,4 @@
-# Name of the project
-> Miss Cocktail
+# Miss Cocktail
 
 Miss Cocktail is a Ruby in Rails web app that stores cocktails recipes and reviews, specially designed for amateur cocktail sommeliers and bartenders.
 
