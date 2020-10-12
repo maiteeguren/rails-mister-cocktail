@@ -28,12 +28,11 @@ To clone the project locally:
 ```shell
 git clone https://github.com/maiteeguren/rails-mister-cocktail
 cd rails-mister-cocktail/
-# packagemanager install
 ```
 
 
-### Deploying / Publishing
 <!-- 
+### Deploying / Publishing
 In case there's some step you have to take that publishes this project to a
 server, this is the right time to state it.
 
@@ -46,7 +45,7 @@ And again you'd need to tell what the previous code actually does. -->
 ## Features
 
 What can Miss Cocktail do?
-* Add a cocktail to the database.
+* Add cocktaila to the database.
 * Add doses to each cocktail.
 * Add reviews to each coctail.
 
@@ -56,11 +55,20 @@ What can Miss Cocktail do?
 If you'd like to contribute, please fork the repository and use a feature
 branch. Pull requests are warmly welcome.
 
-## Links
+1 - Fork it (https://github.com/maiteeguren/rails-mister-cocktail/fork)
+2 - Create your feature branch (```git checkout -b feature/fooBar```)
+3 - Commit your changes (```git commit -am 'Add some fooBar'```)
+4 - Push to the branch (```git push origin feature/fooBar```)
+5 - Create a new Pull Request
 
-Even though this information can be found inside the project on machine-readable
-format like in a .json file, it's good to include a summary of most useful
-links to humans using your project. You can include links like:
+## Meta
+
+Maite Eguren Brown - maite.eguren.brown@gmail.com
+
+https://github.com/maiteeguren
+
+
+## Links
 
 - Project homepage: http://misscocktail-ar.herokuapp.com/
 - Repository: https://github.com/maiteeguren/rails-mister-cocktail
