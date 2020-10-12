@@ -73,9 +73,6 @@ https://github.com/maiteeguren
 - Project homepage: http://misscocktail-ar.herokuapp.com/
 - Repository: https://github.com/maiteeguren/rails-mister-cocktail
 - Issue tracker: https://github.com/maiteeguren/rails-mister-cocktail/issues
-  - In case of sensitive bugs like security vulnerabilities, please contact
-    my@email.com directly instead of using issue tracker. We value your effort
-    to improve the security and privacy of this project!
 
 <!-- 
 ## Licensing
