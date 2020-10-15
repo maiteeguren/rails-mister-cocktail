@@ -1,5 +1,5 @@
 const showForm = () => {
-    const arrowDiv = document.querySelector('.add-new-dose');
+    const arrowDiv = document.querySelector('.add-new-dose-icon');
     const arrows = document.querySelectorAll('.add-new-dose i');
     const doseForm = document.getElementById('new-dose-form');
 

@@ -7,9 +7,16 @@
       <h2 class="white">Add a new cocktail</h2>
 
       <%= simple_form_for(@cocktail) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :photo, as: :file %>
-        <%= f.button :submit, class: 'btn' %>
+        <div class="d-flex align-items-end">
+          <%= f.input :name, class: "m-0" %>
+          <label class="btn transparent m-0">
+            Add a photo
+            <span style="display:none;">
+              <%= f.input :photo, as: :file %>
+            </span>
+          </label>
+        </div>
+        <%= f.button :submit, class: 'btn purple' %>
       <% end %>
     </div>
   </div>
