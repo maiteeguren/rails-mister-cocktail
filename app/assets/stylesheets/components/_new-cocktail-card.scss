@@ -7,3 +7,28 @@
 .photo-field {
     background-color: red;
 }
+.new-cocktail-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.new-cocktail-form button {
+    margin: 0 auto;
+}
+
+.new-cocktail-form .form-group {
+    margin: 0;
+    width: -webkit-fill-available;
+    input {
+        height: 42px;
+    }
+}
+
+.form-control:focus {
+    border: 1px solid white;
+}
+
+.add-photo {
+    height: fit-content;
+    width: 180px;
+}

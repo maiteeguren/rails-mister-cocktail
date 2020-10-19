@@ -6,18 +6,20 @@
       </div>
       <h2 class="white">Add a new cocktail</h2>
 
-      <%= simple_form_for(@cocktail) do |f| %>
-        <div class="d-flex align-items-end">
-          <%= f.input :name, class: "m-0" %>
-          <label class="btn transparent m-0">
-            Add a photo
-            <span style="display:none;">
-              <%= f.input :photo, as: :file %>
-            </span>
-          </label>
-        </div>
-        <%= f.button :submit, class: 'btn purple' %>
-      <% end %>
+      <div class="new-cocktail-form">
+        <%= simple_form_for(@cocktail) do |f| %>
+          <div class="d-flex align-items-end">
+            <%= f.input :name %>
+            <label class="btn transparent m-0 add-photo">
+              Add a photo
+              <span style="display:none;">
+                <%= f.input :photo, as: :file %>
+              </span>
+            </label>
+          </div>
+          <%= f.button :submit, class: 'btn purple mb-0 mx-auto' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
