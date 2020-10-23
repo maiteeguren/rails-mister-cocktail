@@ -22,6 +22,10 @@ class CocktailsController < ApplicationController
         @review = Review.new
     end
 
+    def search
+        @cocktails = Cocktail.where("name ILIKE ?", "%#{params[:search][:query]}%")
+    end
+    
     private
 
     def cocktail_params
