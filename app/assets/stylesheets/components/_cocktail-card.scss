@@ -1,7 +1,7 @@
 .show-container {
     height: 100vh;
-    // background-image: url('/app/assets/images/neon-cocktail4.jpg');
-    // background-size: contain;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("https://res.cloudinary.com/maiteeguren/image/upload/v1604225975/neon-cocktail4_tt1zjd.jpg");
+    background-repeat: no-repeat;
 }
 
 .cocktail-card {
@@ -9,15 +9,16 @@
     display: flex;
     margin: 0 auto;
     width: 60vw;
-    background-color: #252526;
+    background-color: #111;
+    box-shadow: 2px 2px 10px 4px rgba(255, 255, 255, 0.1);
 }
 
 .cocktail-image {
     object-fit: cover;
+    width: 50%;
 }
 
 .cocktail-info {
-    margin: 0 auto;
     width: 50%;
     padding: 40px;
     display: flex;
@@ -32,10 +33,6 @@
     padding-left: 0px;
     display:  flex;
     justify-content: space-between;
-    .fa-times {
-        font-size: 12px;
-        color: $gray;
-    }
 }
 
 .subtitle {
@@ -87,4 +84,20 @@ a:hover {
 
 .fa-pen {
     font-size: 12px;
+}
+
+@media(max-width:1000px) {
+    .cocktail-card {
+        width: 80vw;
+    }
+}
+
+@media(max-width:662px) {
+    .cocktail-card {
+        display: block;
+    }
+    .cocktail-info,
+    .cocktail-image {
+        width: 100%;
+    }
 }

@@ -1,9 +1,12 @@
+<%= render 'shared/navbar' %>
 <div class="show-container d-flex align-items-center">
     <div class="cocktail-card">
         <%= cl_image_tag @cocktail.photo.key, width: 400, class: "cocktail-image" %>
         <div class="cocktail-info">
-            <a href="<%= cocktails_path %>" class="back-button"><i class="fas fa-times"></i></a>
-            <h2 class="pb-2"><%= @cocktail.name %></h2>
+            <div class="d-flex justify-content-between">
+                <h2 class="pb-2"><%= @cocktail.name %></h2>
+                <a href="<%= cocktails_path %>" class="back-button">&times;</a>
+            </div>
             <p class="subtitle">Ingredients</p>
             <ul>
                 <% @cocktail.doses.each do |dose| %>
