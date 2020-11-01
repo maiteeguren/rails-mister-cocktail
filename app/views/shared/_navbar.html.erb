@@ -15,6 +15,29 @@
                 </div>
             </form>
         </li>
-        <li><a href="<%= new_cocktail_path %>" class="btn purple">Add a new cocktail</a></li>
+        <li><a href="#" class="new-cocktail-btn btn purple">Add a new cocktail</a></li>
     </ul>
 </nav>
+
+<div id="new-cocktail-modal">
+    <div class="new-cocktail">
+        <div class="d-flex justify-content-between">
+            <h2 class="white">Add a new cocktail</h2>
+            <a href="#" class="close-modal">&times;</a>
+        </div>
+        <div class="new-cocktail-form">
+            <%= simple_form_for(@cocktail) do |f| %>
+                <div class="d-flex align-items-end">
+                    <%= f.input :name %>
+                    <label class="btn transparent m-0 add-photo">
+                    Add a photo
+                    <span style="display:none;">
+                        <%= f.input :photo, as: :file %>
+                    </span>
+                    </label>
+                </div>
+                <%= f.button :submit, class: 'btn purple mb-0 mx-auto' %>
+            <% end %>
+        </div>
+    </div>
+</div>

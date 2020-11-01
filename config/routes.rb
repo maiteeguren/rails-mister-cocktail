@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'cocktails#index'
   get 'search', to: 'cocktails#search'
   
-  resources :cocktails, only: [ :index, :new, :create, :show ] do
+  resources :cocktails, only: [ :index, :create, :show ] do
     resources :reviews, only: [ :new, :create ]
     resources :doses, only: [ :new, :create ]
   end
