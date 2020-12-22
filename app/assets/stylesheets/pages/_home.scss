@@ -1,13 +1,9 @@
 // Specific CSS for your home-page
 body {
     color: $white;
-    background-color: $black;
     font-family: $body-font;
 }
 
 h1, h2, h3, h4, h5 {
     color: $white;
-    font-family: $headers-font;
-    text-transform: uppercase;
-    // letter-spacing: 0.35em;
 }

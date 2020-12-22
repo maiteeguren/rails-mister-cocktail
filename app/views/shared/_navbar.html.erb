@@ -1,22 +1,16 @@
-<nav class="fixed-top">
-    <a href="<%= cocktails_path %>"><h4>Miss Cocktail</h4></a>
+<nav>
+    <a href="<%= cocktails_path %>"><h1>Miss Cocktail</h1></a> 
     <div class="mobile-menu">
         <i class="fas fa-bars white-color" id="menu-icon"></i>
         <i class="fas fa-times blue hidden" id="exit-icon"></i>
     </div>
     <ul class="menu hide-menu">
-        <li>            
-            <form id="inline-form" novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-                <div class="search-form-control form-group">
-                    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-                    <button name="button" type="submit" class="flat">
-                    <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </form>
-        </li>
-        <li><a href="#" class="new-cocktail-btn btn purple">Add a new cocktail</a></li>
+        <li><a class="nav-item" href="#">About</a></li>
+        <li><a class="nav-item" href="#">Cocktails</a></li>
+        <li><a class="nav-item" href="#">Resume</a></li>
+        <li><a class="nav-item" href="#">Contact</a></li>
     </ul>
+    <a href="#">Search</a>
 </nav>
 
 <div id="new-cocktail-modal">
@@ -36,7 +30,7 @@
                     </span>
                     </label>
                 </div>
-                <%= f.button :submit, class: 'btn purple mb-0 mx-auto' %>
+                <%= f.button :submit, class: 'mb-0 mx-auto' %>
             <% end %>
         </div>
     </div>
