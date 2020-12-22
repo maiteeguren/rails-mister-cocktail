@@ -9,23 +9,29 @@ nav {
   justify-content: space-between;
   align-items: center;
   transition: 0.5s;
+
+  //Font style
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.w-33 {
+  width: 33%;
 }
 
 nav h1 {
-  font-size: 25px;
-  color: white;
+  font-size: 30px;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
 }
 
 nav .nav-item {
-  margin: 0 15px;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
+  margin-right: 15px;
 }
 
 nav.sticky {
@@ -35,7 +41,8 @@ nav.sticky {
 
 nav.sticky h1, 
 nav.sticky .mobile-menu i,
-nav.sticky .nav-item  {
+nav.sticky .nav-item,
+nav.sticky a {
   color: $primary;
 }
 
@@ -46,6 +53,7 @@ nav.sticky .nav-item:hover {
 nav ul {
   position: relative;
   display: flex;
+  justify-content: flex-start;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -53,6 +61,12 @@ nav ul {
 
 .nav-item:hover {
   color: $primary;
+}
+
+.nav-item.log-in {
+  padding-bottom: 2px;
+  border-bottom: 1px solid white;
+  margin-right:0;
 }
 
 /*----------------

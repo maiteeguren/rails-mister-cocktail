@@ -14,16 +14,17 @@ h2 {
 .ingredients-section {
   display: flex;
   justify-content: space-between;
-  background:#F9F4E9;
+  position: relative;
 }
 
 .ingredients-section .text-box {
+  background:#FAF4EB;
   color: grey;
-  width: 350px;
-  margin: 0 auto;
+  width: -webkit-fill-available;
+  padding: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .ingredients-section h2,
@@ -31,6 +32,29 @@ h2 {
   color: grey;
 }
 
+.ingredients-section .lemon-slice {
+  position:absolute;
+  top: -20px;
+  width: 250px;
+  filter: brightness(1.2);
+  right: 40%;
+}
+
+.ingredients-section .rosemary {
+  position:absolute;
+  width: 200px;
+  bottom: 100px;
+  right: 100px;
+  filter: brightness(0.9);
+}
+
 .ingredients-section .ingredients-img {
   height: 150vh;
+  position: relative;
+  z-index: -1;
+}
+
+.image-shadow {
+  box-shadow: inset 80px -90px 40px #FAF4EB;
+  background: transparent;
 }

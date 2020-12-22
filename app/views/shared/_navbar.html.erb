@@ -1,16 +1,27 @@
 <nav>
-    <a href="<%= cocktails_path %>"><h1>Miss Cocktail</h1></a> 
-    <div class="mobile-menu">
-        <i class="fas fa-bars white-color" id="menu-icon"></i>
-        <i class="fas fa-times blue hidden" id="exit-icon"></i>
+
+
+    <div class="w-33">
+        <div class="mobile-menu">
+            <i class="fas fa-bars white-color" id="menu-icon"></i>
+            <i class="fas fa-times blue hidden" id="exit-icon"></i>
+        </div>
+        <ul class="menu hide-menu">
+            <li><a class="nav-item" href="#">About</a></li>
+            <li><a class="nav-item" href="#cocktails">Cocktails</a></li>
+            <li><a class="nav-item" href="#">Resume</a></li>
+            <li><a class="nav-item" href="#">Contact</a></li>
+        </ul>
     </div>
-    <ul class="menu hide-menu">
-        <li><a class="nav-item" href="#">About</a></li>
-        <li><a class="nav-item" href="#">Cocktails</a></li>
-        <li><a class="nav-item" href="#">Resume</a></li>
-        <li><a class="nav-item" href="#">Contact</a></li>
-    </ul>
-    <a href="#">Search</a>
+    <div class="w-33 text-center">
+        <a href="<%= cocktails_path %>"><h1>Miss Cocktail</h1></a> 
+    </div>
+    <div class="w-33">
+        <ul class="menu hide-menu">
+            <li><a class="nav-item" href="#">Search</a></li>
+            <li><a class="nav-item log-in" href="#">Log in</a></li>
+        </ul>
+    </div>
 </nav>
 
 <div id="new-cocktail-modal">

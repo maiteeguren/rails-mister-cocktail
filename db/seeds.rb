@@ -72,9 +72,10 @@ cocktail8 = Cocktail.create!(name: "Whiskey Sour")
 cocktail8.photo.attach(io: file8, filename: 'file8', content_type: 'image/png')
 #https://www.culinaryhill.com/whiskey-sour-cocktail/
 
-#file9 = URI.open('https://i.pinimg.com/originals/c0/cf/5c/c0cf5cf960191b8b8619ad996139942b.jpg')
-#cocktail9 = Cocktail.create!(name: "Savîle Rumtini")
-#cocktail9.photo.attach(io: file9, filename: 'file9', content_type: 'image/png')
+file9 = URI.open('https://i.guim.co.uk/img/media/43bea28160ef11e3f14a087b2b44ed682e73442f/0_374_5760_3456/master/5760.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=884e98419ee7380321144c1051706b49')
+cocktail9 = Cocktail.create!(name: "Rosé Spritz")
+cocktail9.photo.attach(io: file9, filename: 'file9', content_type: 'image/png')
+#https://www.saltandlavender.com/easy-rose-spritzer-recipe/
 
 file10 = URI.open('https://assets.punchdrink.com/wp-content/uploads/2019/09/04145824/Article-Lychee-Martini-90s-cocktail.jpg')
 cocktail10 = Cocktail.create!(name: "Lychee Martini")
@@ -91,9 +92,10 @@ cocktail13 = Cocktail.create!(name: "Pink flamingo")
 cocktail13.photo.attach(io: file13, filename: 'file13', content_type: 'image/png')
 #https://www.thespruceeats.com/uv-pink-flamingo-cocktail-761196
 
-# file14 = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfbFCCpJNd24AAeQOWlqALDDKqBdOjMZVdiw&usqp=CAU')
-# cocktail14 = Cocktail.create!(name: "Blue Lagoon")
-# cocktail14.photo.attach(io: file14, filename: 'file14', content_type: 'image/png')
+file14 = URI.open('https://dspncdn.com/a1/media/692x/6d/68/1b/6d681b50f698c5cb236651419bec9ecd.jpg')
+cocktail14 = Cocktail.create!(name: "Pomegranate Gin")
+cocktail14.photo.attach(io: file14, filename: 'file14', content_type: 'image/png')
+#https://www.yuppiechef.com/spatula/delicious-pomegranate-gin-cocktail/
 
 file15 = URI.open('https://images.squarespace-cdn.com/content/v1/57ca223ae6f2e1669706c2ed/1601298622001-SJCOJXFFTXD0QD39RJFM/ke17ZwdGBToddI8pDm48kI02I_04z7NidtXoqs_KwB97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmi7D7yXkH8nfwsxTs5kW9h_SwVOxnimb__0u_N8uJDJ53X9_QaGwb3XCO2XXabC5A/taryn-sundae-studio-perth-food-photography-83.jpg')
 cocktail15 = Cocktail.create!(name: "Matcha cocktail")
@@ -121,15 +123,32 @@ cocktail19.photo.attach(io: file19, filename: 'file19', content_type: 'image/png
 # 60.00ml / 2.00oz prosecco
 # 1 pinch edible gold leaf
 
-# file20 = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqro6GjYCSVsDvk2GUvs9k3780pBk41Qw_Ug&usqp=CAU')
-# cocktail20 = Cocktail.create!(name: "Sparkling Grapefruit Sangria")
-# cocktail20.photo.attach(io: file20, filename: 'file20', content_type: 'image/png')
+file20 = URI.open('https://www.acouplecooks.com/wp-content/uploads/2020/04/Tequila-Sunrise-003s.jpg')
+cocktail20 = Cocktail.create!(name: "Tequila Sunrise")
+cocktail20.photo.attach(io: file20, filename: 'file20', content_type: 'image/png')
+# Here's how to make a tequila sunrise! This vibrant cocktail layers the colors of a summer sunrise ...
+# Ingredientes
+# 2 ounces (4 tablespoons) tequila
+# 4 ounces (1/2 cup) orange juice
+# 3/4 ounce (1 1/2 tablespoons) grenadine syrup (purchased or homemade)
+# Ice (try our clear ice!)
+# For the garnish: Cocktail cherry, orange juice
 
 
 file21 = URI.open('http://paulineglaizal.com/wp-content/uploads/2018/06/P1.png')
 cocktail1 = Cocktail.create!(name: "Chamomile Gin")
 cocktail1.photo.attach(io: file21, filename: 'file21', content_type: 'image/png')
 #https://www.bonappetit.com/recipe/chamomile-gin-cocktail
+
+file22 = URI.open('https://dspncdn.com/a1/media/692x/51/8f/c5/518fc5c0864157a7469173089198ac68.jpg')
+cocktail1 = Cocktail.create!(name: "Elderflower Gin")
+cocktail1.photo.attach(io: file22, filename: 'file22', content_type: 'image/png')
+#https://kitchenswagger.com/bohemian-cocktail-with-elderflower-foam-recipe/
+
+file23 = URI.open('https://i.pinimg.com/564x/8f/65/26/8f65262a875e72d77d88b3f4bad3eb3a.jpg')
+cocktail1 = Cocktail.create!(name: "Screwdriver")
+cocktail1.photo.attach(io: file23, filename: 'file23', content_type: 'image/png')
+#https://www.inspiredtaste.net/8079/screwdriver-recipe/
 
 file24 = URI.open('http://paulineglaizal.com/wp-content/uploads/2018/06/A.png')
 cocktail1 = Cocktail.create!(name: "Margarita")
@@ -146,4 +165,36 @@ cocktail1 = Cocktail.create!(name: "Mimosa")
 cocktail1.photo.attach(io: file26, filename: 'file26', content_type: 'image/png')
 #https://www.inspiredtaste.net/19516/mimosa-recipe/
 
+file26 = URI.open('http://www.jackspiceradams.com/wp-content/uploads/2019/03/IMG_5732.jpg')
+cocktail1 = Cocktail.create!(name: "Pear Collins")
+cocktail1.photo.attach(io: file26, filename: 'file26', content_type: 'image/png')
+#https://livelytable.com/pear-collins-cocktail/
+
+file27 = URI.open('https://i.pinimg.com/564x/18/ca/dc/18cadc0c7b455ab153a82667bcdc49ab.jpg')
+cocktail1 = Cocktail.create!(name: "Campari Spritz")
+cocktail1.photo.attach(io: file27, filename: 'file27', content_type: 'image/png')
+# https://www.seriouseats.com/recipes/2011/06/campari-spritz-recipe.html
+
+file28 = URI.open('https://i.pinimg.com/564x/b9/0b/06/b90b06b97ccd4893a6ddcaf5b980d6eb.jpg')
+cocktail1 = Cocktail.create!(name: "Apple Verjus Spritz")
+cocktail1.photo.attach(io: file28, filename: 'file28', content_type: 'image/png')
+# 4 ingredientes
+# Frutas y verduras
+# 1 handful Apple and blood orange, Slices
+# 1/2 oz Simple syrup
+# 2 oz Soda
+# 3 oz Verjus
+
+file26 = URI.open('https://blog.toryburch.com/wp-content/uploads/2017/11/Cherry-Bombe-Cocktails_960_slide2.jpg')
+cocktail1 = Cocktail.create!(name: "Charred Pineapple Margarita")
+cocktail1.photo.attach(io: file26, filename: 'file26', content_type: 'image/png')
+#https://www.toryburch.com/blog-post/blog-post.html?bpid=367944
+
+
 puts "Created #{Cocktail.count} cocktail(s)"
+
+# more cocktailes
+# https://i.pinimg.com/564x/94/6f/98/946f98edf90f6b47e0fb16790617519a.jpg
+#https://i.pinimg.com/564x/30/38/53/3038535da65d9c6f67897a29ada5ff32.jpg
+#https://i.pinimg.com/564x/d3/cd/90/d3cd903afa5a56368e7c931b9a2fe5c5.jpg
+#https://i.pinimg.com/564x/9c/78/cb/9c78cbd16c3e7dc33b99054551c311fb.jpg
