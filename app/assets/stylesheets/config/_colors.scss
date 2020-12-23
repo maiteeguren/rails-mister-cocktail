@@ -1,6 +1,6 @@
 // Define variables for your color scheme
 body {
-    color: white;
+    color: gray;
 }
 // For example:
 // DEFAULT
@@ -12,5 +12,6 @@ $green: #1EDD88;
 $gray: gray;
 $light-gray: #F4F4F4;
 
-// NEON
-
+body {
+    background: white !important;
+}

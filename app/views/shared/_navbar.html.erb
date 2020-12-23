@@ -1,48 +1,24 @@
-<nav>
-
-
-    <div class="w-33">
-        <div class="mobile-menu">
-            <i class="fas fa-bars white-color" id="menu-icon"></i>
-            <i class="fas fa-times blue hidden" id="exit-icon"></i>
-        </div>
-        <ul class="menu hide-menu">
-            <li><a class="nav-item" href="#">About</a></li>
-            <li><a class="nav-item" href="#cocktails">Cocktails</a></li>
-            <li><a class="nav-item" href="#">Resume</a></li>
-            <li><a class="nav-item" href="#">Contact</a></li>
-        </ul>
+<div class="w-33">
+    <div class="mobile-menu">
+        <i class="fas fa-bars white-color" id="menu-icon"></i>
+        <i class="fas fa-times blue hidden" id="exit-icon"></i>
     </div>
-    <div class="w-33 text-center">
-        <a href="<%= cocktails_path %>"><h1>Miss Cocktail</h1></a> 
-    </div>
-    <div class="w-33">
-        <ul class="menu hide-menu">
-            <li><a class="nav-item" href="#">Search</a></li>
-            <li><a class="nav-item log-in" href="#">Log in</a></li>
-        </ul>
-    </div>
-</nav>
-
-<div id="new-cocktail-modal">
-    <div class="new-cocktail">
-        <div class="d-flex justify-content-between">
-            <h2 class="white">Add a new cocktail</h2>
-            <a href="#" class="close-modal">&times;</a>
-        </div>
-        <div class="new-cocktail-form">
-            <%= simple_form_for(@cocktail) do |f| %>
-                <div class="d-flex align-items-end">
-                    <%= f.input :name %>
-                    <label class="btn transparent m-0 add-photo">
-                    Add a photo
-                    <span style="display:none;">
-                        <%= f.input :photo, as: :file %>
-                    </span>
-                    </label>
-                </div>
-                <%= f.button :submit, class: 'mb-0 mx-auto' %>
-            <% end %>
-        </div>
-    </div>
+    <ul class="menu hide-menu">
+        <li><a class="nav-item" href="#">About</a></li>
+        <li><a class="nav-item" href="#cocktails">Cocktails</a></li>
+        <li><a class="nav-item" href="#">Resume</a></li>
+        <li><a class="nav-item" href="#">Contact</a></li>
+    </ul>
+</div>
+<div class="w-33 text-center">
+    <a href="<%= cocktails_path %>"><h1>Miss Cocktail</h1></a> 
+</div>
+<div class="w-33">
+    <ul class="menu hide-menu justify-content-end">
+        <li><a class="nav-item" href="#">Search</a></li>
+        <% if current_page?(root_path) %>
+            <li><a class="nav-item new-cocktail-btn" href="#">New Cocktail</a></li>
+        <% end %>
+        <li><a class="nav-item log-in" href="#">Log in</a></li>
+    </ul>
 </div>

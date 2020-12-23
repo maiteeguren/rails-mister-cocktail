@@ -1,4 +1,6 @@
-<%= render 'shared/navbar' %>
+<nav class="homepage">
+    <%= render 'shared/navbar' %>
+</nav>
 
     <!-- 
 <div class="banner">
@@ -24,11 +26,12 @@
             <!--
             <img class="d-block w-100" src="https://www.mensjournal.com/wp-content/uploads/2015/05/frozen-cocktails.jpg?quality=86&strip=all" alt="First slide">
             
-            -->
+            
             <div class="carousel-caption d-none d-md-block">
                 <h5>Discover your new favorite cocktail recipe</h5>
                 <p>Discover your new favorite cocktail recipe</p>
             </div>
+            -->
         </div>
         <!--
         <div class="carousel-item">
@@ -59,38 +62,35 @@
 </div>
 
 <div class="ingredients-section">
-    <div class="text-box">
+    <div class="text-box h-100">
         <h2>Lorem ipsum</h2>
         
-        <div>
+        <div class="value-card">
             <h3>Lorem ipsum dolor sit amet</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
 
-        <div>
+        <div class="value-card">
             <h3>Lorem ipsum dolor sit amet</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
 
-        <div>
+        <div class="value-card">
             <h3>Lorem ipsum dolor sit amet</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
     </div>
     <img class="lemon-slice" src="https://res.cloudinary.com/maiteeguren/image/upload/v1608635314/l-stock-photo-fresh-lemon-slice-close-up-on-bright-blue-background-flat-lay-summer-concept-673602406-removebg-preview_rkobrw.png">
-    <div class="image-shadow">
-        <img class="ingredients-img"src="https://res.cloudinary.com/maiteeguren/image/upload/v1608549367/Drinks-0022_pyg7ka.jpg">
+    <div class="image-shadow h-100">
+        <img class="ingredients-img h-100"src="https://res.cloudinary.com/maiteeguren/image/upload/v1608549367/Drinks-0022_pyg7ka.jpg">
     </div>
     <img class="rosemary" src="https://cdn.webshopapp.com/shops/255487/themes/167883/assets/ingredient-rosemary.png?2020121617062820201216170932">
 </div>
 
-<div class="most-popular">
-    <h2>Most popular</h2>
-</div>
-<div class="Party">
-    
-</div>
 <div class="grid-container" id="cocktails">
+    <div>
+        <h2>Recipes</h2>
+    </div>
     <div class="card-columns">
         <%  @cocktails.shuffle.each do |cocktail|  %>
             <a href="<%= cocktail_path(cocktail)%>">

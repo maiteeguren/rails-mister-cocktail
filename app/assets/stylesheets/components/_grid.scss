@@ -1,9 +1,14 @@
 .grid-container {
     width: 80vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 100px auto;
     padding-bottom: 40px; 
+    h2 {
+        color: $primary;
+        margin-bottom: 50px;
+    }
 }
 
 .column {
@@ -49,11 +54,10 @@
 
 .photo:hover .overlay h5 {
     opacity: 1;
-
 }
   
 .overlay {
-    background: pink;
+    background: rgba(246,191,203, 0.7);
     opacity: 0;
     position: absolute;
     top: 0;

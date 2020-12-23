@@ -1,50 +1,26 @@
 .btn {
-    color: $white;
-    padding: 5px 15px;
-    margin: 20px auto;
+    font-size: 14px;
+    text-decoration: none;
     text-transform: uppercase;
-    border-radius: 0px;
-    font-size: 20px;
-    font-weight: bold;
-    transition: 0.5s;
-}
-    .btn:hover {
-        box-shadow: 0 0 3px 3px $blue;
-        color: $white;
-        background-color: black;
-        border-color: $blue;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 15px 0;
+    &:hover {
+        color: black;
     }
-
-.transparent {
-    border-color: lightgray;
 }
 
-.purple {
-    background-color: $blue;
-    border-color: $blue;
-    margin-right: 20px;
+.btn-white {
+    color: white;
+    padding-bottom: 2px;
+    border-bottom: 1px solid white;
+    &:hover {
+        color: black;
+    }
 }
 
-.purple:hover {
-    background-color: black;
-}
-  
-// .back-button {
-//   margin: 0px;
-//   padding-left: 15px;
-//   color: $white;
-//   font-size: 25px;
-//   display: block;
-//   position: relative;
-//   right: 20px;
-//   top: 10px;
-//   opacity: 0.5;
-// }
-
-.flat {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: $white;
+.btn-grey {
+    color: $primary;
+    padding-bottom: 2px;
+    border-bottom: 1px solid lightgrey;
 }

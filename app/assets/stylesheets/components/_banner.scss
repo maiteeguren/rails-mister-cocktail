@@ -14,22 +14,35 @@ h2 {
 .ingredients-section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
+  height: 150vh;
 }
 
 .ingredients-section .text-box {
   background:#FAF4EB;
-  color: grey;
+  color: $primary;
   width: -webkit-fill-available;
   padding: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
+.ingredients-section .text-box .value-card {
+  margin: 20px 0;
+}
+.ingredients-section h2 {
+  margin-bottom: 30px;
+}
+
+.ingredients-section h3 {
+  font-size: 20px;
+  margin-bottom:12px;
+}
 .ingredients-section h2,
 .ingredients-section h3 {
-  color: grey;
+  color: $primary;
+  font-weight: 300;
 }
 
 .ingredients-section .lemon-slice {
@@ -49,7 +62,6 @@ h2 {
 }
 
 .ingredients-section .ingredients-img {
-  height: 150vh;
   position: relative;
   z-index: -1;
 }

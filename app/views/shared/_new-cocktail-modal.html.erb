@@ -1,0 +1,22 @@
+<div id="new-cocktail-modal">
+    <div class="new-cocktail">
+        <a href="#" class="close-modal">&times;</a>
+        <div>
+            <h2>New cocktail</h2>
+        </div>
+        <div class="new-cocktail-form">
+            <%= simple_form_for(@cocktail) do |f| %>
+                <div>
+                    <%= f.input :name, label_html: { class:"btn m-0" }  %>
+                    <label class="btn">
+                    Add a photo
+                    <span style="display:none;">
+                        <%= f.input :photo, as: :file %>
+                    </span>
+                    </label>
+                </div>
+                <%= f.button :submit, class: 'mx-auto btn btn-grey' %>
+            <% end %>
+        </div>
+    </div>
+</div>

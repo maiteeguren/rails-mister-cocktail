@@ -1,28 +1,42 @@
 .show-container {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("https://res.cloudinary.com/maiteeguren/image/upload/v1604225975/neon-cocktail4_tt1zjd.jpg");
-    background-repeat: no-repeat;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    position: relative;
 }
 
 .cocktail-card {
-    color: white;
+    margin: 120px 0;
+    color: $primary;
+    max-width: 1140px;
     display: flex;
-    margin: 0 auto;
-    width: 60vw;
-    background-color: #111;
-    box-shadow: 2px 2px 10px 4px rgba(255, 255, 255, 0.1);
+    box-shadow: 2px 2px 10px 4px rgba(0,0,0,0.1);
+    background: white;
 }
 
 .cocktail-image {
     object-fit: cover;
     width: 50%;
+    //height: 100%;
 }
 
 .cocktail-info {
     width: 50%;
-    padding: 40px;
+    padding: 60px;
     display: flex;
     flex-direction: column;
+    h2 {
+        text-transform: uppercase;
+        border-bottom: 1px solid lightgrey;
+        color: $primary;
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 25px;
+        text-align: center;
+    }
+
 }
 
 .cocktail-info ul {
@@ -37,17 +51,16 @@
 
 .subtitle {
     text-transform: uppercase;
-    color: $white;
-    border-bottom: 1px solid $white;
-    letter-spacing: 1px;
-    font-size: 16px;
     padding-top: 20px;
+    color: $primary;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
 
 .form-control {
-    background-color: #252526;    
-    border-color: $gray;
-    color:$white;
+    color:$primary;
 }
 
 .form-inputs {
@@ -84,6 +97,11 @@ a:hover {
 
 .fa-pen {
     font-size: 12px;
+}
+
+.btn-back {
+    position: absolute;
+    bottom: 40px;
 }
 
 @media(max-width:1000px) {

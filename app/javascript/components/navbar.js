@@ -4,7 +4,7 @@ const initUpdateNavbarOnScroll = () => {
   // const menuIcon = document.getElementById('menu-icon');
   // const exitIcon = document.getElementById('exit-icon');
   let prevScrollpos = window.pageYOffset;
-  const header = document.querySelector('nav');
+  const header = document.querySelector('nav.homepage');
   // const back = document.getElementById('back-to-top');
   
   window.addEventListener('scroll', () => {
