@@ -8,6 +8,7 @@
             <%= simple_form_for(@cocktail) do |f| %>
                 <div>
                     <%= f.input :name, label_html: { class:"btn m-0" }  %>
+                    <%= f.input :instructions %>
                     <label class="btn">
                     Add a photo
                     <span style="display:none;">
