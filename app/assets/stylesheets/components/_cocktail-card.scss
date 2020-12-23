@@ -106,7 +106,7 @@ a:hover {
 
 @media(max-width:1000px) {
     .cocktail-card {
-        width: 80vw;
+        //width: 80vw;
     }
 }
 
@@ -117,5 +117,9 @@ a:hover {
     .cocktail-info,
     .cocktail-image {
         width: 100%;
+    }
+
+    .cocktail-info {
+        padding: 60px 40px;
     }
 }

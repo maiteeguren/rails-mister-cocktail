@@ -75,6 +75,11 @@ nav ul {
 ------------------
 */
 
+nav.sticky #menu-icon {
+  opacity: 0.6;
+  filter: none;
+}
+
 .mobile-menu {
   display: none;
 }
@@ -87,6 +92,18 @@ nav ul {
 .mobile-menu .hidden {
   display: none;
   opacity: 0;
+}
+
+#menu-icon {
+  filter:invert(1);
+}
+
+#exit-icon {
+  z-index: 1000;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  opacity: 0.6;
 }
 
 /* -------------

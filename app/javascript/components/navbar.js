@@ -1,11 +1,11 @@
 const initUpdateNavbarOnScroll = () => {
-  // const icon = document.querySelector('.mobile-menu');
-  // const menu = document.querySelector('.menu');
-  // const menuIcon = document.getElementById('menu-icon');
-  // const exitIcon = document.getElementById('exit-icon');
+  const icon = document.querySelector('.mobile-menu');
+  const menu = document.querySelector('.menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const exitIcon = document.getElementById('exit-icon');
   let prevScrollpos = window.pageYOffset;
   const header = document.querySelector('nav.homepage');
-  // const back = document.getElementById('back-to-top');
+  const back = document.getElementById('back-to-top');
   
   window.addEventListener('scroll', () => {
     const currentScrollPos = window.pageYOffset;
@@ -25,17 +25,17 @@ const initUpdateNavbarOnScroll = () => {
     prevScrollpos = currentScrollPos;
   })
 
-  // icon.addEventListener('click', () => {
-  //   menu.classList.toggle('hide-menu');
-  //   menuIcon.classList.toggle('hidden');
-  //   exitIcon.classList.toggle('hidden');
-  // })
+  icon.addEventListener('click', () => {
+    menu.classList.toggle('hide-menu');
+    menuIcon.classList.toggle('hidden');
+    exitIcon.classList.toggle('hidden');
+  })
 
-  // menu.addEventListener('click', () => {
-  //   menu.classList.toggle('hide-menu');
-  //   menuIcon.classList.toggle('hidden');
-  //   exitIcon.classList.toggle('hidden');
-  // })
+  menu.addEventListener('click', () => {
+    menu.classList.toggle('hide-menu');
+    menuIcon.classList.toggle('hidden');
+    exitIcon.classList.toggle('hidden');
+  })
   
   // back.addEventListener('click', () => {
   //   document.body.scrollTop = 0; // For Safari
