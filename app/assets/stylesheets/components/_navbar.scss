@@ -8,7 +8,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.5s;
+  transition: 1s;
 
   //Font style
   font-size: 14px;
@@ -65,9 +65,43 @@ nav ul {
 }
 
 .nav-item.log-in {
-  padding-bottom: 2px;
   border-bottom: 1px solid white;
   margin-right:0;
+  &:hover {
+    border-bottom: 1px solid $primary;
+  }
+}
+
+.search-form-control {
+  margin: 0;
+  .form-control {
+    height: 36px;
+    display:none;
+    background-color: transparent;
+    border-color: white;
+    margin-right:10px;
+    color: white;
+  }
+  button {
+    padding: 0;
+    color: white;
+  }
+  button:hover {
+    color: $primary;
+  }
+}
+
+nav:hover .form-control {
+  display: block;
+}
+
+nav.sticky .search-form-control {
+  .form-control {
+    border-color: lightgrey;
+  }
+  .form-control, button {
+    color: $primary;
+  }
 }
 
 /*----------------
@@ -106,6 +140,10 @@ nav.sticky #menu-icon {
   opacity: 0.6;
 }
 
+#search_query::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  font-weight: 200;
+} 
 /* -------------
   RESPONSIVE 
 ---------------- */

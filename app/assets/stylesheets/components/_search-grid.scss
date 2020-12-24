@@ -1,0 +1,31 @@
+.search-results {
+    max-width: 1140px;
+    margin: 100px auto;
+}
+
+.grey {
+    color: $primary;
+}
+
+.search-grid {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    height: 350px;
+    object-fit: cover;
+}
+
+.card {
+    width: 22rem !important;
+    margin: 20px 0;
+    position:relative;
+}
+
+.card .cocktail-link {
+    position: absolute;
+    height: 350px;
+    width: 100%;
+}

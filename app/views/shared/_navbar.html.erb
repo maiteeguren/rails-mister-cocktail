@@ -4,10 +4,10 @@
         <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="30px" class="hidden" id="exit-icon">
     </div>
     <ul class="menu hide-menu">
-        <li><a class="nav-item" href="#">About</a></li>
-        <li><a class="nav-item" href="#cocktails">Cocktails</a></li>
-        <li><a class="nav-item" href="#">Resume</a></li>
-        <li><a class="nav-item" href="#">Contact</a></li>
+        <li><a class="nav-item" href="#cocktails">Recipes</a></li>
+        <% if current_page?(root_path) %>
+            <li><a class="nav-item new-cocktail-btn" href="#">Add New Cocktail</a></li>
+        <% end %>
     </ul>
 </div>
 <div class="w-33 text-center">
@@ -15,10 +15,22 @@
 </div>
 <div class="w-33">
     <ul class="menu hide-menu justify-content-end">
-        <li><a class="nav-item" href="#">Search</a></li>
-        <% if current_page?(root_path) %>
-            <li><a class="nav-item new-cocktail-btn" href="#">New Cocktail</a></li>
-        <% end %>
-        <li><a class="nav-item log-in" href="#">Log in</a></li>
+        <li class="nav-item">
+            <form novalidate="novalidate" class="simple_form search" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+                <div class="search-form-control form-group d-flex">
+                    <input class="form-control string required" type="text" name="params[query]" id="search_query" placeholder="Search by name..." />
+                    <button name="button" type="submit" class="btn">Search</button>
+                </div>
+                <!--
+                <%= form_tag cocktails_path, method: :get do %>
+                    <%= text_field_tag :query,
+                        params[:query],
+                        class: "form-control" %>
+                    <%= submit_tag "Search", class: "btn" %>
+                <% end %>
+                -->
+            </form>
+        </li>
+        <li class="d-flex align-items-center"><a class="nav-item log-in" href="#">Log in</a></li>
     </ul>
 </div>

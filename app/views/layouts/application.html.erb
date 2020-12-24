@@ -15,7 +15,9 @@
   </head>
 
   <body>
-    <%= render 'shared/new-cocktail-modal' %>
+    <% if current_page?(root_path) %>
+      <%= render 'shared/new-cocktail-modal' %>
+    <% end%>
     <%= yield %>
   </body>
 </html>

@@ -20,7 +20,11 @@ class CocktailsController < ApplicationController
     end
 
     def search
-        @cocktails = Cocktail.where("name ILIKE ?", "%#{params[:search][:query]}%")
+        if params[:params][:query].present?
+            @cocktails = Cocktail.where("name ILIKE ?", "%#{params[:params][:query]}%")
+        else
+            @cocktails = Cocktail.all
+        end
     end
     
     private

@@ -1,13 +1,21 @@
-<div class="">
-    <h3>Search results</h3>
+<nav class="sticky">
+    <%= render 'shared/navbar' %>
+</nav>
 
-    <%  @cocktails.each do |cocktail|  %>
-        <a href="<%= cocktail_path(cocktail)%>">
-            <div class="photo">
-                <%= cl_image_tag cocktail.photo.key, width: 270, crop: :fill unless cocktail.nil? %>
-            </div>
-            <h5 class="title"><%= cocktail.name %></h5>
-            <p> This content is a little bit longer.</p>
-        </a>
-    <% end %>
+<div class="search-results">
+    <h3 class="grey">Search results for "<%= params[:params][:query] %>"</h3>
+
+    <div class="search-grid">
+        <%  @cocktails.each do |cocktail|  %>
+                <div class="card" style="width: 18rem;">
+                    <a href="<%= cocktail_path(cocktail)%>" class="cocktail-link"></a>
+                    <%= cl_image_tag cocktail.photo.key, class:"card-img-top", crop: :fill unless cocktail.nil? %>
+                    <div class="card-body">
+                        <h5 class="card-title grey"><%= cocktail.name %></h5>
+                        <p class="card-text grey">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="<%= cocktail_path(cocktail)%>" class="btn btn-grey">See Recipe</a>
+                    </div>
+                </div>
+        <% end %>
+    </div>
 </div>
