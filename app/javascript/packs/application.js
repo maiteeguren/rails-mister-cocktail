@@ -25,22 +25,7 @@ document.addEventListener('turbolinks:load', () => {
   modalToggle();
 });
 
-// const icon = document.querySelector('.mobile-menu');
-// const menu = document.querySelector('.menu');
-// const menuIcon = document.getElementById('menu-icon');
-// const exitIcon = document.getElementById('exit-icon');
 
-// icon.addEventListener('click', () => {
-//   menu.classList.toggle('hide-menu');
-//   menuIcon.classList.toggle('hidden');
-//   exitIcon.classList.toggle('hidden');
-// })
-
-// menu.addEventListener('click', () => {
-//   menu.classList.toggle('hide-menu');
-//   menuIcon.classList.toggle('hidden');
-//   exitIcon.classList.toggle('hidden');
-// })
 
 $(document).ready(function() {
   //parallax scroll
