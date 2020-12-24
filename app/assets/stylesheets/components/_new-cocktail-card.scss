@@ -18,15 +18,15 @@
 
 }
 
-.close-modal, .back-button {
-    color: lightgrey;
-    text-decoration: none;
-    font-size: 25px;
+.close-modal {
+    cursor: pointer;
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 20px;
+    width: 15px;
+    opacity: 0.6;
     &:hover {
-        color: black;
+        opacity: 1;
         transition: 0.2s;
     }
 }

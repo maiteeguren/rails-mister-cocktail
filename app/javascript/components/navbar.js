@@ -9,20 +9,21 @@ const initUpdateNavbarOnScroll = () => {
   
   window.addEventListener('scroll', () => {
     const currentScrollPos = window.pageYOffset;
-
-    header.classList.toggle('sticky', window.scrollY > 0 );
+    if (header) {
+      header.classList.toggle('sticky', window.scrollY > 0 );
+      if (prevScrollpos > currentScrollPos) {
+        header.style.top = "0";
+      } else {
+        header.style.top = "-100px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
     //   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     //     back.style.display = "block";
     // } else {
     //     back.style.display = "none";
     //   }
     /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-    if (prevScrollpos > currentScrollPos) {
-      header.style.top = "0";
-    } else {
-      header.style.top = "-100px";
-    }
-    prevScrollpos = currentScrollPos;
   })
 
   icon.addEventListener('click', () => {
