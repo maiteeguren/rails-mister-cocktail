@@ -8,10 +8,12 @@
             <%= simple_form_for(@cocktail) do |f| %>
                 <div>
                     <%= f.input :name, label_html: { class:"btn m-0" }  %>
-                    <%= f.input :instructions, as: :text, label_html: { class:"btn m-0" } %>
-                    
-                            <%= f.input :photo, as: :file, input_html: { class:"btn m-0" } %>
-                   
+                    <label class="btn">
+                    Add a photo
+                    <span style="display:none;">
+                        <%= f.input :photo, as: :file %>
+                    </span>
+                    </label>
                 </div>
                 <%= f.button :submit, class: 'mx-auto btn btn-grey' %>
             <% end %>
