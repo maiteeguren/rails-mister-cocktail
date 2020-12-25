@@ -1,12 +1,14 @@
 <nav class="sticky">
     <%= render 'shared/navbar' %>
 </nav>
+<div class="show-container">
+    <%= link_to '<< BACK', root_path, class:"btn btn-back" %>
 
-<div class="search-results">
-    <h3 class="grey">Search results for "<%= params[:params][:query] %>"</h3>
+    <div class="search-results">
+        <h2 class="grey grey-underline">Search results for "<%= params[:params][:query] %>"</h2>
 
-    <div class="search-grid">
-        <%  @cocktails.each do |cocktail|  %>
+        <div class="search-grid">
+            <%  @cocktails.each do |cocktail|  %>
                 <div class="card" style="width: 18rem;">
                     <a href="<%= cocktail_path(cocktail)%>" class="cocktail-link"></a>
                     <%= cl_image_tag cocktail.photo.key, class:"card-img-top", crop: :fill unless cocktail.nil? %>
@@ -16,6 +18,8 @@
                         <a href="<%= cocktail_path(cocktail)%>" class="btn btn-grey">See Recipe</a>
                     </div>
                 </div>
-        <% end %>
+            <% end %>
+        </div>
     </div>
 </div>
+

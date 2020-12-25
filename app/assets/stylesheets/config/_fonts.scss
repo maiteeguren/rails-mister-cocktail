@@ -25,3 +25,10 @@ h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     font-weight: 300 !important;
 }
+
+.grey-underline {
+    border-bottom: 1px solid lightgrey;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 0.5rem;
+}

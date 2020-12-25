@@ -5,6 +5,7 @@
     justify-content: center;
     background: white;
     position: relative;
+    padding: 0 40px;
 }
 
 .cocktail-card {
@@ -29,14 +30,9 @@
     flex-direction: column;
     h2 {
         text-transform: uppercase;
-        border-bottom: 1px solid lightgrey;
-        color: $primary;
-        width: 100%;
-        margin-bottom: 20px;
         font-size: 25px;
         text-align: center;
-    }
-
+    }   
 }
 
 .cocktail-info ul {
@@ -122,4 +118,5 @@ a:hover {
     .cocktail-info {
         padding: 60px 40px;
     }
+
 }

@@ -9,13 +9,15 @@
         <%= cl_image_tag @cocktail.photo.key, width: 400, class: "cocktail-image" %>
         
         <div class="cocktail-info">
-            <h2 class="pb-2"><%= @cocktail.name %></h2>
+            <h2 class="grey-underline grey"><%= @cocktail.name %></h2>
             <p class="subtitle">Ingredients</p>
             <ul>
                 <% @cocktail.doses.each do |dose| %>
                     <li class="d-flex align-items-center">
                         <p class="m-0"><%= dose.description %> <%= dose.ingredient.name %></p>
-                        <%= link_to icon('fas', 'times'), dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class:"btn" %>
+                        <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class:"btn" do %>
+                            <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="30px" class="delete-icon">
+                        <% end %>
                     </li>
                 <% end %>
                 <li class="d-block add-new-dose">
