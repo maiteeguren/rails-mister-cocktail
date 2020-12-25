@@ -14,7 +14,7 @@
             <ul>
                 <% @cocktail.doses.each do |dose| %>
                     <li class="d-flex align-items-center">
-                        <p class="m-0"><%= dose.description %> <%= dose.ingredient.name %></p>
+                        <p class="m-0"><%= dose.amount %> <%= dose.measure.unit %> <%= dose.ingredient %></p>
                         <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class:"btn" do %>
                             <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="30px" class="delete-icon">
                         <% end %>
@@ -65,8 +65,11 @@
             <div class="new-cocktail-form">
                 <%= simple_form_for [@cocktail, @dose] do |f| %>
                     <div class="form-inputs" id="new-dose-form">
-                        <%= f.input :description, label_html: { class:"btn" } %>
-                        <%= f.association :ingredient, label_html: { class:"btn" }  %>
+                        <div class="d-flex">
+                            <%= f.input :amount, label_html: { class:"btn" } %>
+                            <%= f.association :measure, label_method: :unit, label_html: { class:"btn" }  %>
+                        </div>
+                        <%= f.input :ingredient, label_html: { class:"btn" } %>
                         <%= f.button :submit, class: "btn btn-grey" %>
                     </div>
                 <% end %>

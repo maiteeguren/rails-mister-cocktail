@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_082651) do
+ActiveRecord::Schema.define(version: 2020_12_25_220911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,17 +44,18 @@ ActiveRecord::Schema.define(version: 2020_12_23_082651) do
   end
 
   create_table "doses", force: :cascade do |t|
-    t.text "description"
+    t.text "amount"
     t.bigint "cocktail_id", null: false
-    t.bigint "ingredient_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "measure_id", null: false
+    t.string "ingredient"
     t.index ["cocktail_id"], name: "index_doses_on_cocktail_id"
-    t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"
+    t.index ["measure_id"], name: "index_doses_on_measure_id"
   end
 
-  create_table "ingredients", force: :cascade do |t|
-    t.string "name"
+  create_table "measures", force: :cascade do |t|
+    t.string "unit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -71,6 +72,6 @@ ActiveRecord::Schema.define(version: 2020_12_23_082651) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "doses", "cocktails"
-  add_foreign_key "doses", "ingredients"
+  add_foreign_key "doses", "measures"
   add_foreign_key "reviews", "cocktails"
 end

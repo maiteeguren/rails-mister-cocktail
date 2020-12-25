@@ -9,10 +9,6 @@
 require 'json'
 require 'open-uri'
 
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-ingredients_serialized = open(url).read
-ingredients = JSON.parse(ingredients_serialized)
-
 puts "Cleaning database"
 Review.destroy_all
 
@@ -20,15 +16,20 @@ Cocktail.destroy_all
 
 Dose.destroy_all
 
-Ingredient.destroy_all
+Measure.destroy_all
 
-puts "Creating ingredients..."
+puts "Creating units of measurement..."
 
-ingredients["drinks"].each do |ingredient|
-    Ingredient.create(name: ingredient["strIngredient1"])
+units = %w(lb oz mg g kg ml dl cl l cc teaspoon tablespoon cup unit handfull)
+
+units.each do |u|
+    Measure.create(unit: u)
 end
+# ingredients["drinks"].each do |ingredient|
+#     Ingredient.create(name: ingredient["strIngredient1"])
+# end
 
-puts "Created #{Ingredient.count} ingredient(s)"
+puts "Created #{Measure.count} unit(s)"
 
 puts "Creating cocktails..."
 
