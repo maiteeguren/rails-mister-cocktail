@@ -9,15 +9,34 @@
         <%= cl_image_tag @cocktail.photo.key, width: 400, class: "cocktail-image" %>
         
         <div class="cocktail-info">
-            <h2 class="grey-underline grey"><%= @cocktail.name %></h2>
+            <div class="d-flex justify-content-between grey-underline">
+                <h2 class="grey m-0"><%= @cocktail.name %></h2>
+                <% if @cocktail.reviews.length > 0 %>
+                    <% ratingCount = 0 %>
+                    <% @cocktail.reviews.each do |review| %>
+                        <% ratingCount += review.rating %>
+                    <% end %>
+                    <% ratingAverage = ratingCount / @cocktail.reviews.length %>
+                    <div class="d-flex align-items-center">
+                        <% ratingAverage.times do %> 
+                            <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon"/>
+                        <% end %>
+                        <% if ratingAverage < 5 %>
+                            <% ( 5 - ratingAverage).times do %> 
+                            <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon" style="opacity: 0.6; filter: grayscale(1);"/>                            
+                            <% end %>
+                        <% end %>
+                        <p class="my-0 ml-1"> (<%= @cocktail.reviews.length  %> <%= 'review'.pluralize(@cocktail.reviews.length) %>)</p>
+                    </div>
+                <% end %>
+            </div>
             <p class="subtitle">Ingredients</p>
             <ul>
                 <% @cocktail.doses.each do |dose| %>
                     <li class="d-flex align-items-center">
                         <p class="m-0"><%= dose.amount %> <%= dose.measure.unit %> <%= dose.ingredient %></p>
-                        <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class:"btn" do %>
-                            <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="30px" class="delete-icon">
-                        <% end %>
+                        <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="10px" class="btn" id="sweet-alert-demo">
+                        <%= link_to "", dose_path(dose), remote: true, method: :delete, id: "delete-link", class: "hidden" %>
                     </li>
                 <% end %>
                 <li class="d-block add-new-dose">
@@ -31,15 +50,16 @@
             <p><%= @cocktail.instructions %></p>
             
             <p class="subtitle">Reviews (<%= @cocktail.reviews.count %>)</p>
+            <!--
             <ul>
                 <% @cocktail.reviews.each do |review| %>
                     <li class="d-block">
                         <% review.rating.times do %> 
-                            <i class="fas fa-star"></i>
+                            <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon"/>
                         <% end %>
                         <% if review.rating < 5 %>
                             <% ( 5 - review.rating).times do %> 
-                                <i class="far fa-star"></i>
+                            <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon" style="opacity: 0.6; filter: grayscale(1);"/>                            
                             <% end %>
                         <% end %>
 
@@ -53,6 +73,7 @@
                     </div>
                 </li>
             </ul>
+            -->
         </div>
     </div>
 
@@ -63,7 +84,7 @@
                 <h2>New ingredient</h2>
             </div>
             <div class="new-cocktail-form">
-                <%= simple_form_for [@cocktail, @dose] do |f| %>
+                <%= simple_form_for [@cocktail, @dose], remote:true do |f| %>
                     <div class="form-inputs" id="new-dose-form">
                         <div class="d-flex">
                             <%= f.input :amount, label_html: { class:"btn" } %>
@@ -84,7 +105,7 @@
                 <h2>New review</h2>
             </div>
             <div class="new-cocktail-form">
-                <%= simple_form_for [@cocktail, @review] do |f| %>
+                <%= simple_form_for [@cocktail, @review], remote:true do |f| %>
                     <div class="form-inputs" id="new-review-form">
                         <%= f.input :user, label_html: { class:"btn" }  %>
                         <%= f.input :description, label_html: { class:"btn" }  %>
