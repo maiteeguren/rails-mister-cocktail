@@ -1,17 +1,44 @@
-<ul>
-    <% @reviews.each do |review| %>
-        <li class="d-block">
-            <% review.rating.times do %> 
-                <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon"/>
+<div class="reviews-container">
+    <div class="title-container">
+        <h2 class="grey"><%= @cocktail.name %></h2>
+        <% if @reviews.length > 0 %>
+            <% ratingCount = 0 %>
+            <% @reviews.each do |review| %>
+                <% ratingCount += review.rating %>
             <% end %>
-            <% if review.rating < 5 %>
-                <% ( 5 - review.rating).times do %> 
-                <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon" style="opacity: 0.6; filter: grayscale(1);"/>                            
+            <% ratingAverage = ratingCount / @reviews.length %>
+            <div class="d-flex align-items-center">
+                <% ratingAverage.times do %> 
+                    <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon"/>
                 <% end %>
-            <% end %>
+                <% if ratingAverage < 5 %>
+                    <% ( 5 - ratingAverage).times do %> 
+                    <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon" style="opacity: 0.6; filter: grayscale(1);"/>                            
+                    <% end %>
+                <% end %>
+                <p class="my-0 ml-1"> (<%= @reviews.length  %> <%= 'review'.pluralize(@reviews.length) %>)</p>
+            </div>
+        <% end %>
+    </div>
+    <ul>
+        <% @reviews.each do |review| %>
+            <li class="d-block">
+                <p><b><%= review.user %></b></p>
+                <p><%= review.created_at %></p>
+                <% review.rating.times do %> 
+                    <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon"/>
+                <% end %>
+                <% if review.rating < 5 %>
+                    <% ( 5 - review.rating).times do %> 
+                    <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon" style="opacity: 0.6; filter: grayscale(1);"/>                            
+                    <% end %>
+                <% end %>
 
-            <p class="m-0"><%= review.description %></p>
-            <p>- <%= review.user %></p>
-        </li>
-    <% end %>
-</ul>
+                <p class="review-content"><%= review.description %></p>
+            </li>
+        <% end %>
+    </ul>
+</div>
+<div class="w-100 d-flex justify-content-center">
+    <%= link_to '<< BACK', cocktail_path(@cocktail), class:"btn" %>
+</div>

@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
 
     def index
         @reviews = Review.where(cocktail: params[:cocktail_id])
+        @cocktail = Cocktail.find(params[:cocktail_id])
     end
 
     private

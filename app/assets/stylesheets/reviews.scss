@@ -1,3 +1,64 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.reviews-container {
+    color: gray;
+    padding: 100px 50px;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    p {
+        margin:0;
+    }
+    ul {
+        width: 600px;
+    }
+    li {
+        padding: 40px 0;
+        border-bottom: 1px solid lightgray;
+    }
+    li:first-child {
+        padding-top: 0;
+    }
+    li:last-child {
+        border-bottom: 1px solid white;
+        padding-bottom: 0;
+    }
+}
+
+.title-container {
+    width: 300px;
+    h2 {
+        font-size: 40px;;
+    }
+}
+
+.review-content {
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+// ---- RESPONSIVE -----
+
+@media (max-width: 767px) {
+    .reviews-container {
+        flex-direction: column;
+    }
+    .title-container {
+        align-self: center;
+        text-align: center;
+    }
+    .title-container div {
+        justify-content: center;
+    }
+    .reviews-container ul {
+        width: 100%;
+        padding:50px 50px 0 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    .reviews-container ul {
+        padding: 50px 0 0 0;
+    }
+}
