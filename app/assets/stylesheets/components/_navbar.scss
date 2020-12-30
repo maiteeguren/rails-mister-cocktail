@@ -76,11 +76,12 @@ nav ul {
   margin: 0;
   .form-control {
     height: 36px;
-    display:none;
+    opacity: 0;
     background-color: transparent;
     border-color: white;
     margin-right:10px;
     color: white;
+    transition: 0.5s ease-in;
   }
   button {
     padding: 0;
@@ -92,14 +93,15 @@ nav ul {
 }
 
 nav:hover .form-control {
-  display: block;
+  opacity: 1;
 }
 
 nav.sticky .search-form-control {
   .form-control {
     border-color: lightgrey;
   }
-  .form-control, button {
+  .form-control, button,
+  #search_query::placeholder {
     color: $primary;
   }
 }
