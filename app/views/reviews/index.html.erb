@@ -24,7 +24,7 @@
         <% @reviews.each do |review| %>
             <li class="d-block">
                 <p><b><%= review.user %></b></p>
-                <p><%= review.created_at %></p>
+                <p><%= review.created_at.strftime("%d %B %Y") %></p>
                 <% review.rating.times do %> 
                     <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon"/>
                 <% end %>
