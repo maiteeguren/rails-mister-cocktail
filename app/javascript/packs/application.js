@@ -23,14 +23,13 @@ import { initSweetalert } from '../plugins/init_sweetalert';
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
-  modalToggle();
-  initSweetalert('#sweet-alert-demo', {
+  initSweetalert('#delete-ingredient', {
     title: "Are you sure?",
     text: "This action cannot be reversed",
     icon: "warning"
   }, (value) => {
     if (value) {
-      const link = document.querySelector('#delete-link');
+      const link = document.querySelector('#delete-ingredient-link');
       link.click();
     }
   });

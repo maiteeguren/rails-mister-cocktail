@@ -10,6 +10,7 @@ require 'json'
 require 'open-uri'
 
 puts "Cleaning database"
+
 Review.destroy_all
 
 Cocktail.destroy_all
@@ -18,16 +19,15 @@ Dose.destroy_all
 
 Measure.destroy_all
 
+User.destroy_all
+
 puts "Creating units of measurement..."
 
-units = %w(lb oz mg g kg ml dl cl l cc teaspoon tablespoon cup unit handfull)
+units = %w(lb oz mg g kg ml dl cl l cc teaspoon tablespoon cup unit handful)
 
 units.each do |u|
     Measure.create(unit: u)
 end
-# ingredients["drinks"].each do |ingredient|
-#     Ingredient.create(name: ingredient["strIngredient1"])
-# end
 
 puts "Created #{Measure.count} unit(s)"
 
@@ -199,3 +199,10 @@ puts "Created #{Cocktail.count} cocktail(s)"
 #https://i.pinimg.com/564x/30/38/53/3038535da65d9c6f67897a29ada5ff32.jpg
 #https://i.pinimg.com/564x/d3/cd/90/d3cd903afa5a56368e7c931b9a2fe5c5.jpg
 #https://i.pinimg.com/564x/9c/78/cb/9c78cbd16c3e7dc33b99054551c311fb.jpg
+
+puts "Creating reviews"
+names = %w(Sarah Mike Brad Jennifer Ashley Tom Eva Stev Andrew Joan Anna)
+#Review.create!(user: names.sample, description: "I love this cocktail!", rating:"5", cocktail: Cocktail.all.sample)
+#Review.create!(user: "Anna", description: "Not good... I couldn't finish it", rating:"2", cocktail: Cocktail.all.sample)
+
+puts "Created #{Review.count} review(s)"

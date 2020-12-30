@@ -7,7 +7,7 @@
                 <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="30px" class="close-modal">
             </button>
         </div>
-        <div class="modal-body py-2">
+        <div class="modal-body pt-2">
             <%= simple_form_for [@cocktail, @dose], remote:true do |f| %>
                 <div class="form-inputs">
                     <div class="d-flex">
@@ -15,7 +15,7 @@
                         <%= f.association :measure, label_method: :unit, label_html: { class:"btn" } %>
                     </div>
                     <%= f.input :ingredient, label_html: { class:"btn" } %>
-                    <%= f.button :submit, class: "btn btn-grey" %>
+                    <%= f.button :submit, class: "btn btn-grey mt-3" %>
                 </div>
             <% end %>
         </div>

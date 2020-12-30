@@ -9,14 +9,14 @@
         <%= cl_image_tag @cocktail.photo.key, width: 400, class: "cocktail-image" %>  
         <div class="cocktail-info">
             <div class="d-flex justify-content-between grey-underline">
-                <h2 class="grey m-0"><%= @cocktail.name %></h2>
+                <h2 class="grey m-0 text-left"><%= @cocktail.name %></h2>
                 <% if @cocktail.reviews.length > 0 %>
                     <% ratingCount = 0 %>
                     <% @cocktail.reviews.each do |review| %>
                         <% ratingCount += review.rating %>
                     <% end %>
                     <% ratingAverage = ratingCount / @cocktail.reviews.length %>
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-end stars-box">
                         <% ratingAverage.times do %> 
                             <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon"/>
                         <% end %>
@@ -34,8 +34,8 @@
                 <% @cocktail.doses.each do |dose| %>
                     <li class="d-flex align-items-center">
                         <p class="m-0"><%= dose.amount %> <%= dose.measure.unit %> <%= dose.ingredient %></p>
-                        <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="10px" class="btn close" id="sweet-alert-demo">
-                        <%= link_to "", dose_path(dose), remote: true, method: :delete, id: "delete-link", class: "hidden" %>
+                        <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="10px" class="btn" id="delete-ingredient" >
+                        <%= link_to "", dose_path(dose), method: :delete, remote:true, id: "delete-ingredient-link", class: "hidden" %>
                     </li>
                 <% end %>
                 <li class="d-block add-new-dose">
@@ -48,7 +48,12 @@
             <p class="subtitle">Instructions</p>
             <p><%= @cocktail.instructions %></p>
             
-            <a href="<%= cocktail_reviews_path(@cocktail) %>"><p class="subtitle">Reviews (<%= @cocktail.reviews.count %>)</p></a>
+            <% if @cocktail.reviews.length > 0 %>
+                <a href="<%= cocktail_reviews_path(@cocktail) %>"><p class="subtitle">Reviews (<%= @cocktail.reviews.count %>)</p></a>
+            <% else %>
+                <p class="subtitle">Reviews (<%= @cocktail.reviews.count %>)</p>
+            <% end %>
+            
             <ul>
                 <li class="d-block add-new-dose">
                     <div class="d-flex justify-content-between add-new-review">

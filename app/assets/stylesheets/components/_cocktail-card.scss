@@ -107,6 +107,10 @@ a:hover {
     image-rendering: pixelated;
 }
 
+.stars-box {
+    width:300px;
+}
+
 @media(max-width:1000px) {
     .cocktail-card {
         //width: 80vw;
