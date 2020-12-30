@@ -3,9 +3,13 @@ class ReviewsController < ApplicationController
         @cocktail = Cocktail.find(params[:cocktail_id])       
         @review = Review.new(review_params)
         @review.cocktail = @cocktail
-        @review.save!
-        
-        redirect_to cocktail_path(@cocktail)
+        @review.user = current_user
+        if @review.save
+            #sweetalert_success('Your resource is created and available.', 'Successfully created', persistent: 'Awesome!')
+            redirect_to cocktail_path(@cocktail)
+        else
+            #sweetalert_success('Your resource is created and available.', 'Successfully created', persistent: 'Awesome!')
+        end
     end
 
     def index
@@ -16,6 +20,6 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:description, :user, :rating)
+        params.require(:review).permit(:content, :rating)
     end
 end
