@@ -1,0 +1,17 @@
+<ul>
+    <% @reviews.each do |review| %>
+        <li class="d-block">
+            <% review.rating.times do %> 
+                <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon"/>
+            <% end %>
+            <% if review.rating < 5 %>
+                <% ( 5 - review.rating).times do %> 
+                <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon" style="opacity: 0.6; filter: grayscale(1);"/>                            
+                <% end %>
+            <% end %>
+
+            <p class="m-0"><%= review.description %></p>
+            <p>- <%= review.user %></p>
+        </li>
+    <% end %>
+</ul>

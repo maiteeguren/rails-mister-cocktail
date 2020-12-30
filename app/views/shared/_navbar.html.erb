@@ -6,7 +6,7 @@
     <ul class="menu hide-menu">
         <li><a class="nav-item" href="#cocktails">All Recipes</a></li>
         <% if current_page?(root_path) %>
-            <li><a class="nav-item new-cocktail-btn" href="#">Add New Cocktail</a></li>
+            <li><a class="nav-item" href="#" data-toggle="modal" data-target="#new-cocktail-modal">Add New Cocktail</a></li>
         <% end %>
     </ul>
 </div>
@@ -43,6 +43,9 @@
 </div>
 
 <%= render 'shared/login_form' %>
+<% if current_page?(root_path) %>
+    <%= render 'shared/cocktail-modal' %>
+<% end%>
 <!--
                 <%= link_to "Login", new_user_session_path, class:"nav-item log-in" %>
 <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"} %>

@@ -1,0 +1,24 @@
+<div class="modal fade" id="new-ingredient-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content p-5">
+        <div class="modal-header">
+            <h2>New ingredient</h2>
+            <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+                <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="30px" class="close-modal">
+            </button>
+        </div>
+        <div class="modal-body py-2">
+            <%= simple_form_for [@cocktail, @dose], remote:true do |f| %>
+                <div class="form-inputs">
+                    <div class="d-flex">
+                        <%= f.input :amount, label_html: { class:"btn" } %>
+                        <%= f.association :measure, label_method: :unit, label_html: { class:"btn" } %>
+                    </div>
+                    <%= f.input :ingredient, label_html: { class:"btn" } %>
+                    <%= f.button :submit, class: "btn btn-grey" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+  </div>
+</div>

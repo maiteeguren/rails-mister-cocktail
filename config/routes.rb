@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'search', to: 'cocktails#search'
   
   resources :cocktails, only: [ :index, :create, :show, :search ] do
-    resources :reviews, only: [ :new, :create ]
+    resources :reviews, only: [ :new, :create, :index ]
     resources :doses, only: [ :new, :create ]
   end
 

@@ -6,8 +6,7 @@
     <%= link_to '<< BACK', root_path, class:"btn btn-back" %>
     <div class="cocktail-card">
       
-        <%= cl_image_tag @cocktail.photo.key, width: 400, class: "cocktail-image" %>
-        
+        <%= cl_image_tag @cocktail.photo.key, width: 400, class: "cocktail-image" %>  
         <div class="cocktail-info">
             <div class="d-flex justify-content-between grey-underline">
                 <h2 class="grey m-0"><%= @cocktail.name %></h2>
@@ -35,13 +34,13 @@
                 <% @cocktail.doses.each do |dose| %>
                     <li class="d-flex align-items-center">
                         <p class="m-0"><%= dose.amount %> <%= dose.measure.unit %> <%= dose.ingredient %></p>
-                        <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="10px" class="btn" id="sweet-alert-demo">
+                        <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="10px" class="btn close" id="sweet-alert-demo">
                         <%= link_to "", dose_path(dose), remote: true, method: :delete, id: "delete-link", class: "hidden" %>
                     </li>
                 <% end %>
                 <li class="d-block add-new-dose">
                     <div class="d-flex justify-content-between add-new-dose-icon">
-                        <p class="btn btn-grey new-ingredient-btn">+ Add ingredient</p>
+                        <p class="btn btn-grey new-ingredient-btn" data-toggle="modal" data-target="#new-ingredient-modal">+ Add ingredient</p>
                     </div>
                 </li>
             </ul>
@@ -49,71 +48,17 @@
             <p class="subtitle">Instructions</p>
             <p><%= @cocktail.instructions %></p>
             
-            <p class="subtitle">Reviews (<%= @cocktail.reviews.count %>)</p>
-            <!--
+            <a href="<%= cocktail_reviews_path(@cocktail) %>"><p class="subtitle">Reviews (<%= @cocktail.reviews.count %>)</p></a>
             <ul>
-                <% @cocktail.reviews.each do |review| %>
-                    <li class="d-block">
-                        <% review.rating.times do %> 
-                            <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon"/>
-                        <% end %>
-                        <% if review.rating < 5 %>
-                            <% ( 5 - review.rating).times do %> 
-                            <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon" style="opacity: 0.6; filter: grayscale(1);"/>                            
-                            <% end %>
-                        <% end %>
-
-                        <p class="m-0"><%= review.description %></p>
-                        <p>- <%= review.user %></p>
-                    </li>
-                <% end %>
                 <li class="d-block add-new-dose">
                     <div class="d-flex justify-content-between add-new-review">
-                        <p class="btn btn-grey new-review-btn">+ Add a review</p>
+                        <p class="btn btn-grey new-review-btn" data-toggle="modal" data-target="#new-review-modal">+ Add a review</p>
                     </div>
                 </li>
             </ul>
-            -->
-        </div>
-    </div>
-
-    <div id="new-ingredient-modal">
-        <div class="new-cocktail">
-            <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" class="close-modal">
-            <div>
-                <h2>New ingredient</h2>
-            </div>
-            <div class="new-cocktail-form">
-                <%= simple_form_for [@cocktail, @dose], remote:true do |f| %>
-                    <div class="form-inputs" id="new-dose-form">
-                        <div class="d-flex">
-                            <%= f.input :amount, label_html: { class:"btn" } %>
-                            <%= f.association :measure, label_method: :unit, label_html: { class:"btn" }  %>
-                        </div>
-                        <%= f.input :ingredient, label_html: { class:"btn" } %>
-                        <%= f.button :submit, class: "btn btn-grey" %>
-                    </div>
-                <% end %>
-            </div>
-        </div>
-    </div>
-
-    <div id="new-review-modal">
-        <div class="new-cocktail">
-            <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" class="close-modal">
-            <div>
-                <h2>New review</h2>
-            </div>
-            <div class="new-cocktail-form">
-                <%= simple_form_for [@cocktail, @review], remote:true do |f| %>
-                    <div class="form-inputs" id="new-review-form">
-                        <%= f.input :user, label_html: { class:"btn" }  %>
-                        <%= f.input :description, label_html: { class:"btn" }  %>
-                        <%= f.input :rating, collection: 1..5, label_html: { class:"btn" }   %>
-                        <%= f.button :submit, class: "btn btn-grey" %>
-                    </div>
-                <% end %>
-            </div>
         </div>
     </div>
 </div>
+
+<%= render 'shared/ingredient-modal', cocktail: @cocktail, dose: @dose %>
+<%= render 'shared/review-modal', cocktail: @cocktail, review: @review %>
