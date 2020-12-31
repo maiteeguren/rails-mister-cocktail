@@ -105,7 +105,12 @@ nav.sticky .search-form-control {
     color: $primary;
   }
 }
-
+#search_query{
+  width: 200px;
+} 
+#search_query::placeholder {
+  font-size: 12px;
+}
 /*----------------
   MOBILE MENU
 ------------------
