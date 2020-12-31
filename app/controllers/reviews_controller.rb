@@ -4,12 +4,9 @@ class ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review.cocktail = @cocktail
         @review.user = current_user
-        if @review.save
-            #sweetalert_success('Your resource is created and available.', 'Successfully created', persistent: 'Awesome!')
-            redirect_to cocktail_path(@cocktail)
-        else
-            #sweetalert_success('Your resource is created and available.', 'Successfully created', persistent: 'Awesome!')
-        end
+        @review.save
+        
+        redirect_to cocktail_path(@cocktail)
     end
 
     def index

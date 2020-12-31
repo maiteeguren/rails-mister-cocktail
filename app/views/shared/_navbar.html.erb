@@ -12,6 +12,9 @@
                 <li><%= link_to "Add New Cocktail", "", class:"nav-item", data: {toggle: "modal", target: "#login-modal"} %></li>
             <% end %>
         <% end %>
+        <% if current_page?(cocktail_path) && @cocktail && @cocktail.user === current_user %>
+            <li><a class="nav-item" href="#" data-toggle="modal" data-target="#new-cocktail-modal">Edit Cocktail</a></li>
+        <% end %>
     </ul>
 </div>
 <div class="w-33 text-center">
@@ -39,9 +42,8 @@
 </div>
 
 <%= render 'shared/login_form' %>
-<% if current_page?(root_path) %>
-    <%= render 'shared/cocktail-modal' %>
-<% end%>
+<%= render 'shared/cocktail-modal' %>
+
 <!--
                 <%= link_to "Login", new_user_session_path, class:"nav-item log-in" %>
 <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"} %>

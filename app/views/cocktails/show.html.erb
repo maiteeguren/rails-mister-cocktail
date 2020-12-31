@@ -34,15 +34,19 @@
                 <% @cocktail.doses.each do |dose| %>
                     <li class="d-flex align-items-center">
                         <p class="m-0"><%= dose.amount %> <%= dose.measure.unit %> <%= dose.ingredient %></p>
-                        <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="10px" class="btn" id="delete-ingredient" >
-                        <%= link_to "", dose_path(dose), method: :delete, remote:true, id: "delete-ingredient-link", class: "hidden" %>
+                        <% if @cocktail.user === current_user %>
+                            <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="10px" class="btn" id="delete-ingredient" >
+                            <%= link_to "", dose_path(dose), method: :delete, remote:true, id: "delete-ingredient-link", class: "hidden" %>
+                        <% end %>
                     </li>
                 <% end %>
-                <li class="d-block add-new-dose">
-                    <div class="d-flex justify-content-between add-new-dose-icon">
-                        <p class="btn btn-grey new-ingredient-btn" data-toggle="modal" data-target="#new-ingredient-modal">+ Add ingredient</p>
-                    </div>
-                </li>
+                <% if @cocktail.user === current_user %>
+                    <li class="d-block add-new-dose">
+                        <div class="d-flex justify-content-between add-new-dose-icon">
+                            <p class="btn btn-grey new-ingredient-btn" data-toggle="modal" data-target="#new-ingredient-modal">+ Add ingredient</p>
+                        </div>
+                    </li>
+                <% end %>
             </ul>
             
             <p class="subtitle">Instructions</p>
