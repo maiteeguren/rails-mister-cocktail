@@ -1,27 +1,29 @@
-<div class="modal fade" id="new-cocktail-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content p-5">
-        <div class="modal-header">
-            <h2>New cocktail</h2>
-            <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
-                <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="30px" class="close-modal">
-            </button>
-        </div>
-        <div class="modal-body pt-2">
-            <%= simple_form_for(@cocktail) do |f| %>
-                <div>
-                    <%= f.input :name, label_html: { class:"btn m-0" }  %>
-                    <%= f.input :instructions, as: :text, label_html: { class:"btn m-0" } %>
-                    <label class="btn">
-                    Add a photo
-                    <span style="display:none;">
-                        <%= f.input :photo, as: :file %>
-                    </span>
-                    </label>
-                </div>
-                <%= f.button :submit, class: 'mx-auto btn btn-grey d-block' %>
-            <% end %>
+<% if @cocktail %>
+    <div class="modal fade" id="new-cocktail-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content p-5">
+            <div class="modal-header">
+                <h2>New cocktail</h2>
+                <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+                    <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="30px" class="close-modal">
+                </button>
+            </div>
+            <div class="modal-body pt-2">
+                <%= simple_form_for(@cocktail) do |f| %>
+                    <div>
+                        <%= f.input :name, label_html: { class:"btn m-0" }  %>
+                        <%= f.input :instructions, as: :text, label_html: { class:"btn m-0" } %>
+                        <label class="btn">
+                        Add a photo
+                        <span style="display:none;">
+                            <%= f.input :photo, as: :file %>
+                        </span>
+                        </label>
+                    </div>
+                    <%= f.button :submit, class: 'mx-auto btn btn-grey d-block' %>
+                <% end %>
+            </div>
         </div>
     </div>
-  </div>
-</div>
+    </div>
+<% end %>

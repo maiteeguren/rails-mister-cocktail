@@ -1,7 +1,7 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="login-modal">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content flex-row">
-      <div class="w-50 p-5 pink-bg">
+      <div class="w-50 p-5 pink-bg d-flex flex-column justify-content-center">
 
         <h5 class="modal-title text-center" id="exampleModalLabel">Log in</h5>
         <div>
@@ -15,7 +15,7 @@
                   required: false,
                   input_html: { autocomplete: "current-password" },
                   label_html: { class: "btn white m-0" } %>
-              <%= f.input :remember_me, label_html: { class: "btn p-0 white m-0" }, as: :boolean if devise_mapping.rememberable? %>
+              <%= f.input :remember_me, label_html: { class: "btn white m-0" }, as: :boolean if devise_mapping.rememberable? %>
             </div>
             <%= f.button :submit, "Log in", class: "btn btn-white my-0 mx-auto d-block" %>
             
@@ -30,11 +30,16 @@
             <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="30px" class="close-modal">
           </button>
         </div>
-        <!--
+        
         <div class="">
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
             <div class="p-0">
+              <%= f.input :name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "email" },
+                          label_html: { class: "btn m-0" } %>
               <%= f.input :email,
                           required: true,
                           autofocus: true,
@@ -53,7 +58,6 @@
             <%= f.button :submit, "Sign up", class: "btn btn-grey my-0 mx-auto d-block" %>
           <% end %>
         </div>
-        -->
       </div>
     </div>
   </div>

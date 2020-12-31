@@ -25,7 +25,7 @@
                             <img src="https://img.icons8.com/fluent/48/000000/star.png" class="rating-icon" style="opacity: 0.6; filter: grayscale(1);"/>                            
                             <% end %>
                         <% end %>
-                        <p class="my-0 ml-1"> (<%= @cocktail.reviews.length  %> <%= 'review'.pluralize(@cocktail.reviews.length) %>)</p>
+                        <a href="<%= cocktail_reviews_path(@cocktail) %>"><p class="my-0 ml-1 grey"> (<%= @cocktail.reviews.length  %> <%= 'review'.pluralize(@cocktail.reviews.length) %>)</p></a>
                     </div>
                 <% end %>
             </div>
