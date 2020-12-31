@@ -4,16 +4,15 @@
         <img src="https://res.cloudinary.com/maiteeguren/image/upload/v1608715767/img_216627_wyjfkh.png" width="30px" class="hidden" id="exit-icon">
     </div>
     <ul class="menu hide-menu">
-        <li><a class="nav-item" href="#cocktails">All Recipes</a></li>
-        <% if current_page?(root_path) %>
-            <% if user_signed_in? %>
+        <li><a class="nav-item" href="<% root_path %>/#cocktails">All Recipes</a></li>
+        <% if user_signed_in? %>
+            <% if current_page?('/cocktails/:id') && @cocktail.user === current_user %>
+                <li><a class="nav-item" href="#" data-toggle="modal" data-target="#new-cocktail-modal">Edit Cocktail</a></li>
+            <% elsif current_page?(root_path) %>
                 <li><a class="nav-item" href="#" data-toggle="modal" data-target="#new-cocktail-modal">Add New Cocktail</a></li>
-            <% else %>
-                <li><%= link_to "Add New Cocktail", "", class:"nav-item", data: {toggle: "modal", target: "#login-modal"} %></li>
             <% end %>
-        <% end %>
-        <% if current_page?(cocktail_path) && @cocktail && @cocktail.user === current_user %>
-            <li><a class="nav-item" href="#" data-toggle="modal" data-target="#new-cocktail-modal">Edit Cocktail</a></li>
+        <% else %>
+            <li><%= link_to "Add New Cocktail", "", class:"nav-item", data: {toggle: "modal", target: "#login-modal"} %></li>
         <% end %>
     </ul>
 </div>
@@ -43,8 +42,3 @@
 
 <%= render 'shared/login_form' %>
 <%= render 'shared/cocktail-modal' %>
-
-<!--
-                <%= link_to "Login", new_user_session_path, class:"nav-item log-in" %>
-<%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"} %>
--->

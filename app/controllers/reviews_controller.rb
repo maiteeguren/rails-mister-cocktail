@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :authenticate_user!, only: [:create]
     def create 
         @cocktail = Cocktail.find(params[:cocktail_id])       
         @review = Review.new(review_params)

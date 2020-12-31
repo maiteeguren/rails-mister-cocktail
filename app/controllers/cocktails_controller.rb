@@ -1,5 +1,7 @@
 class CocktailsController < ApplicationController
     before_action :set_cocktail, only: [:show, :update]
+    before_action :authenticate_user!, only: [:create]
+    
     def index
         @cocktails = Cocktail.all
         @cocktail = Cocktail.new
