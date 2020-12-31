@@ -14,7 +14,19 @@
                     <%= cl_image_tag cocktail.photo.key, class:"card-img-top", crop: :fill unless cocktail.nil? %>
                     <div class="card-body">
                         <h5 class="card-title grey"><%= cocktail.name %></h5>
-                        <p class="card-text grey">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text grey">
+                        <% ingredients = ""%>
+                        <% cocktail.doses.each do |dose| %>
+                            <% if dose === cocktail.doses.first %>
+                                <% ingredients << dose.ingredient %>
+                            <% elsif  dose === cocktail.doses.last %>
+                                <% ingredients << " & #{dose.ingredient}." %>
+                            <% else %>
+                                <% ingredients << ", #{dose.ingredient}" %>
+                            <% end %>
+                        <% end %>
+                        <%= ingredients.capitalize %>
+                        </p>
                         <a href="<%= cocktail_path(cocktail)%>" class="btn btn-grey">See Recipe</a>
                     </div>
                 </div>
