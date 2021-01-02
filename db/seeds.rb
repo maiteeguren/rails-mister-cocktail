@@ -268,7 +268,7 @@ cocktail17.photo.attach(io: file17, filename: 'file17', content_type: 'image/png
 Dose.create!(amount:"1", measure: oz, ingredient:"gin", cocktail: cocktail17)
 Dose.create!(amount:"1", measure: oz, ingredient:"Campari", cocktail: cocktail17)
 Dose.create!(amount:"1", measure: oz, ingredient:"sweet Vermouth", cocktail: cocktail17)
-Dose.create!(amount:"1", measure: twist, ingredient:"orange", cocktail: cocktail17)
+Dose.create!(amount:"1", measure: unit, ingredient:"orange twist", cocktail: cocktail17)
 cocktail17.instructions = "Add the gin, Campari and sweet vermouth to a mixing glass filled with ice, and stir until well-chilled. Strain into a rocks glass filled with large ice cubes. Garnish with an orange peel."
 cocktail17.save!
 #https://www.liquor.com/recipes/negroni/
@@ -373,7 +373,7 @@ puts "Cocktail24 created"
 file25 = URI.open('http://paulineglaizal.com/wp-content/uploads/2018/06/gff.png')
 cocktail25 = Cocktail.new(name: "Cucumber-Mint Gin Cocktail", user: user)
 cocktail25.photo.attach(io: file25, filename: 'file25', content_type: 'image/png')
-Dose.create!(amount:"5", measure: slices, ingredient:"cucumber", cocktail: cocktail25)
+Dose.create!(amount:"5", measure: slice, ingredient:"cucumber", cocktail: cocktail25)
 Dose.create!(amount:"2", measure: spring, ingredient:"mint", cocktail: cocktail25)
 Dose.create!(amount:"0.75", measure: oz, ingredient:"simple syrup", cocktail: cocktail25)
 Dose.create!(amount:"0.75", measure: oz, ingredient:"lime juice", cocktail: cocktail25)
@@ -428,7 +428,7 @@ file29 = URI.open('https://blog.toryburch.com/wp-content/uploads/2017/11/Cherry-
 cocktail29 = Cocktail.new(name: "Charred Pineapple Margarita", user: user)
 cocktail29.photo.attach(io: file29, filename: 'file29', content_type: 'image/png')
 Dose.create!(amount:"1", measure: teaspoon, ingredient:"canola oil", cocktail: cocktail29)
-Dose.create!(amount:"4", measure: slices, ingredient:"small pineapple", cocktail: cocktail29)
+Dose.create!(amount:"4", measure: slice, ingredient:"small pineapple", cocktail: cocktail29)
 Dose.create!(amount:"1", measure: unit, ingredient:"lime (juice)", cocktail: cocktail29)
 Dose.create!(amount:"2", measure: tablespoon, ingredient:"cilantro", cocktail: cocktail29)
 Dose.create!(amount:"80", measure: ml, ingredient:"tequila", cocktail: cocktail29)
