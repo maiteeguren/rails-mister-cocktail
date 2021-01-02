@@ -30,7 +30,7 @@ class CocktailsController < ApplicationController
                 OR doses.ingredient @@ :query \
             "
 
-            @cocktails = Cocktail.joins(:doses).where(sql_query, query: "%#{params[:params][:query]}%")
+            @cocktails = Cocktail.joins(:doses).where(sql_query, query: "%#{params[:params][:query]}%").uniq
         else
             @cocktails = Cocktail.all
         end
