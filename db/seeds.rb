@@ -462,6 +462,10 @@ puts "Creating reviews"
 end
 
 5.times do
+    Review.create!(user: User.all.sample, content: "Simply delicious!", rating:"5", cocktail: Cocktail.all.sample)
+end
+
+5.times do
     Review.create!(user: User.all.sample, content: "A little too strong for me, but still a good cocktail", rating:"3", cocktail: Cocktail.all.sample)
 end
 
