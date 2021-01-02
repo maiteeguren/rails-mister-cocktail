@@ -15,17 +15,17 @@
                     <div class="card-body">
                         <h5 class="card-title grey"><%= cocktail.name %></h5>
                         <p class="card-text grey">
-                        <% ingredients = ""%>
-                        <% cocktail.doses.each do |dose| %>
-                            <% if dose === cocktail.doses.first %>
-                                <% ingredients << dose.ingredient %>
-                            <% elsif  dose === cocktail.doses.last %>
-                                <% ingredients << " & #{dose.ingredient}." %>
-                            <% else %>
-                                <% ingredients << ", #{dose.ingredient}" %>
+                            <% ingredients = ""%>
+                            <% cocktail.doses.each do |dose| %>
+                                <% if dose === cocktail.doses.first %>
+                                    <% ingredients << dose.ingredient %>
+                                <% elsif  dose === cocktail.doses.last %>
+                                    <% ingredients << " & #{dose.ingredient}." %>
+                                <% else %>
+                                    <% ingredients << ", #{dose.ingredient}" %>
+                                <% end %>
                             <% end %>
-                        <% end %>
-                        <%= ingredients.capitalize %>
+                            <%= ingredients.capitalize %>
                         </p>
                         <a href="<%= cocktail_path(cocktail)%>" class="btn btn-grey">See Recipe</a>
                     </div>
