@@ -6,10 +6,10 @@
     <ul class="menu hide-menu">
         <li><a class="nav-item" href="<% root_path %>/#cocktails">All Recipes</a></li>
         <% if user_signed_in? %>
-            <% if current_page?('/cocktails/:id') && @cocktail.user === current_user %>
-                <li><a class="nav-item" href="#" data-toggle="modal" data-target="#new-cocktail-modal">Edit Cocktail</a></li>
-            <% elsif current_page?(root_path) %>
+            <% if current_page?(root_path) %>
                 <li><a class="nav-item" href="#" data-toggle="modal" data-target="#new-cocktail-modal">Add New Cocktail</a></li>
+            <% elsif @cocktail.id && @cocktail.user === current_user %>
+                <li><a class="nav-item" href="#" data-toggle="modal" data-target="#new-cocktail-modal">Edit Cocktail</a></li>
             <% end %>
         <% else %>
             <li><%= link_to "Add New Cocktail", "", class:"nav-item", data: {toggle: "modal", target: "#login-modal"} %></li>
@@ -17,7 +17,7 @@
     </ul>
 </div>
 <div class="w-33 text-center">
-    <a href="<%= cocktails_path %>"><h1>Miss Cocktail</h1></a> 
+    <a href="<%= root_path %>"><h1>Miss Cocktail</h1></a> 
 </div>
 <div class="w-33">
     <ul class="menu hide-menu justify-content-end">
