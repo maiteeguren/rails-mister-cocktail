@@ -47,7 +47,7 @@ What can Miss Cocktail do?
 * Add cocktaila to the database.
 * Add doses to each cocktail.
 * Add reviews to each coctail.
-* Search by cocktail name or ingredient
+* Search cocktail by name or ingredient
 
 ## Contributing
 
