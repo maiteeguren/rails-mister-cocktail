@@ -36,7 +36,7 @@ pinch = Measure.create(unit:"pinch")
 spring = Measure.create(unit:"spring(s)")
 part = Measure.create(unit:"part(s)")
 
-units = %w(lb mg g kg dl cl l cc handful)
+units = %w(lb mg g kg dl cl l cc handful wedge)
 
 units.each do |u|
     Measure.create(unit: u)
