@@ -29,8 +29,7 @@ git clone https://github.com/maiteeguren/rails-mister-cocktail
 cd rails-mister-cocktail/
 ```
 
-
-<!-- 
+<!--
 ### Deploying / Publishing
 In case there's some step you have to take that publishes this project to a
 server, this is the right time to state it.
@@ -44,10 +43,11 @@ And again you'd need to tell what the previous code actually does. -->
 ## Features
 
 What can Miss Cocktail do?
-* Add cocktaila to the database.
-* Add doses to each cocktail.
-* Add reviews to each coctail.
-* Search cocktail by name or ingredient
+
+- Add cocktaila to the database.
+- Add doses to each cocktail.
+- Add reviews to each coctail.
+- Search cocktail by name or ingredient
 
 ## Contributing
 
@@ -55,9 +55,9 @@ If you'd like to contribute, please fork the repository and use a feature
 branch. Pull requests are warmly welcome.
 
 1 - Fork it (https://github.com/maiteeguren/rails-mister-cocktail/fork)
-2 - Create your feature branch (```git checkout -b feature/fooBar```)
-3 - Commit your changes (```git commit -am 'Add some fooBar'```)
-4 - Push to the branch (```git push origin feature/fooBar```)
+2 - Create your feature branch (`git checkout -b feature/fooBar`)
+3 - Commit your changes (`git commit -am 'Add some fooBar'`)
+4 - Push to the branch (`git push origin feature/fooBar`)
 5 - Create a new Pull Request
 
 ## Meta
@@ -66,14 +66,13 @@ Maite Eguren Brown - maite.eguren.brown@gmail.com
 
 https://github.com/maiteeguren
 
-
 ## Links
 
 - Project homepage: http://misscocktail-ar.herokuapp.com/
 - Repository: https://github.com/maiteeguren/rails-mister-cocktail
 - Issue tracker: https://github.com/maiteeguren/rails-mister-cocktail/issues
 
-<!-- 
+<!--
 ## Licensing
 
 One really important part: Give your project a proper license. Here you should
